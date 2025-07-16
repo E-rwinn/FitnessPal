@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@1,300&family=Poppins:wght@500&display=swap");
+.background {
+	background-color: #ffffff;
+}
+
+.Container {
+	display: flex;
+	gap: 64px;
+	margin-left: 11vw;
+	margin-top: 6vh;
+}
+.Font {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+	margin-top: 2vh;
+}
+.Today {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	margin-top: 3vh;
+	margin-left: 3vw;
+	display: block;
+}
+.Box {
+	margin-left: 7vw;
+	margin-top: 2vh;
+	height: 200px;
+	width: 350px;
+	border-radius: 24px;
+	background-color: #f15223;
+	display: inline-block;
+}
+
+.Box2 {
+	margin-top: 2vh;
+	margin-left: 8vw;
+	background-color: rgba(255, 255, 255, 0);
+	height: 100px;
+	width: 140px;
+}
+.Day {
+	display: inline-block;
+	color: white;
+}
+.Time {
+	margin-top: -1vh;
+	font-size: 50px;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+}
+.img {
+	margin-left: 44vw;
+	margin-top: -9vh;
+	display: block;
+}
+.Box3 {
+	margin-left: 20vw;
+	margin-top: 5vh;
+	background-color: black;
+	color: white;
+	width: 200px;
+	height: 21px;
+	text-align: center;
+	border-radius: 20px;
+}
