@@ -22,7 +22,7 @@
 	margin-left: 3vw;
 	display: block;
 }
-.Box {
+/* .Box {
 	margin-left: 7vw;
 	margin-top: 2vh;
 	height: 200px;
@@ -30,7 +30,7 @@
 	border-radius: 24px;
 	background-color: #f15223;
 	display: inline-block;
-}
+} */
 
 .Box2 {
 	margin-top: 2vh;
@@ -42,6 +42,8 @@
 .Day {
 	display: inline-block;
 	color: white;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
 }
 .Time {
 	margin-top: -1vh;
@@ -49,7 +51,7 @@
 	font-family: "Inria Sans", sans-serif;
 	font-weight: 600;
 }
-.img {
+/* .img {
 	margin-left: 44vw;
 	margin-top: -9vh;
 	display: block;
@@ -63,4 +65,46 @@
 	height: 21px;
 	text-align: center;
 	border-radius: 20px;
+} */
+
+.Top {
+	background-color: #f15223;
+	height: 135px;
+	width: 360px;
+	margin-left: 6vw;
+	border-radius: 15px;
+	display: inline-block;
+	margin-top: 1vh;
+	display: flex;
+}
+.bottom {
+	background-color: #f15223;
+	height: 98px;
+	width: 360px;
+	border-radius: 15px;
+	margin-left: 6vw;
+	margin-top: -3vh;
+	display: inline-block;
+}
+
+.Box3 {
+	background-color: rgba(0, 0, 0, 0);
+	height: 100px;
+	width: 140px;
+	margin-top: 2vh;
+	margin-left: 3vw;
+	text-align: center;
+}
+.posetion {
+	text-align: center;
+	margin-top: 2vh;
+}
+.bottom {
+	text-align: center;
+}
+.Button {
+	margin-top: 4vh;
+	background-color: black;
+	color: white;
+	width: 10px;
 }
