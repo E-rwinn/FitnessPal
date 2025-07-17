@@ -22,23 +22,11 @@
 	margin-left: 3vw;
 	display: block;
 }
-/* .Box {
-	margin-left: 7vw;
-	margin-top: 2vh;
-	height: 200px;
-	width: 350px;
-	border-radius: 24px;
-	background-color: #f15223;
-	display: inline-block;
-} */
 
 .Box2 {
-	margin-top: 2vh;
-	margin-left: 8vw;
 	background-color: rgba(255, 255, 255, 0);
-	height: 100px;
-	width: 140px;
 }
+
 .Day {
 	display: inline-block;
 	color: white;
@@ -51,60 +39,66 @@
 	font-family: "Inria Sans", sans-serif;
 	font-weight: 600;
 }
-/* .img {
-	margin-left: 44vw;
-	margin-top: -9vh;
-	display: block;
+
+.workout-container {
+	background-color: #f15223;
+	border-radius: 15px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
-.Box3 {
-	margin-left: 20vw;
-	margin-top: 5vh;
-	background-color: black;
-	color: white;
-	width: 200px;
-	height: 21px;
-	text-align: center;
-	border-radius: 20px;
-} */
 
 .Top {
-	background-color: #f15223;
-	height: 135px;
-	width: 360px;
-	margin-left: 6vw;
-	border-radius: 15px;
 	display: inline-block;
-	margin-top: 1vh;
 	display: flex;
+	justify-content: space-evenly;
 }
 .bottom {
-	background-color: #f15223;
-	height: 98px;
-	width: 360px;
-	border-radius: 15px;
-	margin-left: 6vw;
-	margin-top: -3vh;
 	display: inline-block;
 }
 
 .Box3 {
 	background-color: rgba(0, 0, 0, 0);
-	height: 100px;
-	width: 140px;
-	margin-top: 2vh;
-	margin-left: 3vw;
-	text-align: center;
+	max-width: 55%;
 }
-.posetion {
-	text-align: center;
-	margin-top: 2vh;
+.Posetion {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
 }
 .bottom {
+	display: flex;
+	justify-content: center;
 	text-align: center;
+	padding-top: 25px;
 }
 .Button {
-	margin-top: 4vh;
 	background-color: black;
 	color: white;
-	width: 10px;
+	width: 140px;
+	border-radius: 25px;
+	padding: 4px;
+}
+.posetion1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.upcoming {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	margin-left: 3vw;
+	display: block;
+}
+.Box4 {
+	background-color: #f15223;
+	border-radius: 15px;
+	width: 100%;
+	padding-top: 3px;
+	padding-bottom: 45px;
+}
+.Posetion2 {
+	width: 50%;
+	height: auto;
 }
