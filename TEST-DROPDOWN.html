@@ -43,8 +43,31 @@
       margin-top: 30px;
       margin-left: 33px;
     }
-      
+    
+    .para-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
 
+    .pfp-image {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.name-text {
+  font-family: "Sen", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.edit-pin {
+    font-family: "Sen", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+  color: #9C9C9C;
+  margin-top: 3px;
+  text-decoration: none;
+}
 
     /* Dropdown Styles */
     .dropdown-box {
@@ -70,7 +93,7 @@
     .dropdown-title {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 22px;
     }
 
     .dropdown-title img {
@@ -79,8 +102,9 @@
     }
 
     .arrow-icon {
-      width: 16px;
-      height: 16px;
+      width: 24px;
+      height: 24px;
+      margin-left: 240px;
       transition: transform 0.3s ease;
     }
 
@@ -92,7 +116,7 @@
       display: none;
       flex-direction: column;
       gap: 15px;
-      padding: 10px 16px 16px;
+      padding: 10px 33px 16px;
       animation: slideDown 0.3s ease forwards;
     }
 
@@ -103,13 +127,13 @@
     .dropdown-item {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 10px;
     }
 
     .dropdown-item img {
-      width: 20px;
-      height: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
     }
 
     /* Toggle switch */
@@ -174,7 +198,7 @@
     <!--HEADER -->
      <section class="header">
     <div class="container">
-      <a href="TEST-DROPDOWN.html"><img class="header-image" src="Arrow.png" alt=""></a>
+      <a href="setting.html"><img class="header-image" src="Arrow.png" alt=""></a>
       
       <p class="setting">Settings</p>
     </div>
@@ -187,77 +211,44 @@
     <div class="dropdown-box">
     <div class="dropdown-header" onclick="toggleDropdown(this)">
       <div class="dropdown-title">
-        <img src="pfp.png" alt="" class="pfp-image">
-        <span>Moderation Settings</span>
+        <img src="https://cdn-icons-png.flaticon.com/128/9308/9308008.png" alt="" class="pfp-image" height="20px" width="20px">
+        <p class="para-title">Account</p>
       </div>
       <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" />
     </div>
 
     <div class="dropdown-content">
       <div class="dropdown-item">
-        <img src="user-icon.png" alt="Blocked Users" />
-        <span>Blocked users</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider"></span>
-        </label>
+       <img src="https://media.newyorker.com/photos/624f484bb8900d61c847f8d7/1:1/w_2269,h_2269,c_limit/Long-Butler-09.jpg" alt="" height="45px" width="45px">
+      <div class="item-information">
+        <p class="name-text">Arnold Schwarzenegger</p>
+        <p class="edit-pin">Edit Your Profile</p>
+      </div>
       </div>
 
-      <div class="dropdown-item">
-        <img src="limit-icon.png" alt="Interaction Limits" />
-        <span>Interaction limits</span>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider"></span>
-        </label>
-      </div>
-
-      <div class="dropdown-item">
-        <img src="code-icon.png" alt="Code Review Limits" />
-        <span>Code review limits</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider"></span>
-        </label>
-      </div>
     </div>
   </div>
-
+  <hr>
    <div class="dropdown-box">
     <div class="dropdown-header" onclick="toggleDropdown(this)">
       <div class="dropdown-title">
-        <img src="icon.png" alt="Moderation Icon" />
-        <span>Moderation Settings</span>
+        <img src="https://cdn-icons-png.flaticon.com/128/4991/4991422.png" height="20px" class="pfp-image"/>
+        <p class="para-title">Notification</p>
       </div>
-      <img class="arrow-icon" src="arrow.svg" alt="Dropdown Arrow" />
+      <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 200px;" />
     </div>
 
     <div class="dropdown-content">
       <div class="dropdown-item">
-        <img src="user-icon.png" alt="Blocked Users" />
-        <span>Blocked users</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider"></span>
-        </label>
+       <h1>Hello World</h1>
       </div>
 
       <div class="dropdown-item">
-        <img src="limit-icon.png" alt="Interaction Limits" />
-        <span>Interaction limits</span>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider"></span>
-        </label>
+        
       </div>
 
       <div class="dropdown-item">
-        <img src="code-icon.png" alt="Code Review Limits" />
-        <span>Code review limits</span>
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider"></span>
-        </label>
+          
       </div>
     </div>
   </div>
