@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+         * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #F15223;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+        background-color: #FFF;
+        padding: 30px;
+        border-radius: 22px;
+        height: 500px;
+        width: 320px;
+        max-width: 90%;
+
+    }
+    .top-header {
+      color: #F15223;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 800;
+      font-size: 27px;
+      margin-top: 50px;
+    }
+
+    hr {
+        padding: 0px 2px 0px 0px;
+    }
+
+    .user-info {
+        display: flex;
+        margin-top: 11px;
+        margin-bottom: 22px;
+        text-align: center;
+    }
+
+    .user-info button {
+        background-color: #ECECEC;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        padding: 10px 63px 10px 80px;
+        border-radius: 22px;
+        border: none;
+    }
+
+    h2 {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .label-container1 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    .label-container2 {
+        margin-bottom: 15px;
+    }
+    
+    .info-box {
+        background-color: #ECECEC;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        padding: 10px 63px 10px 48px;
+        border-radius: 22px;
+        border: none;
+    }
+
+    .ai-id {
+        display: flex;
+    }
+
+    .final-button {
+        background-color: #F15223;
+        color: #FFF;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        padding: 10px 63px 10px 48px;
+        border-radius: 22px;
+        border: none;
+        margin-left: 50px;
+        margin-top: 25px;
+    }
+    .x-btn img {
+        height: 40px;
+        width: 40px;
+    }
+    </style>
+    <title>Fitness Pals</title>
+</head>
+<body>
+    
+    <section class="container">
+       
+        <div class="top-header">
+            <p >Log in</p>    
+        </div>
+        <div class="user-info">
+            <button><!--<img src="googlell.png" alt="Google"
+                height="20px" width="20px">-->Log in with Google</button>
+        </div>
+
+        <hr>
+
+        <form action="">
+            <div class="label-container1">
+                <h2>Email Address/Username</h2><br>
+            <input type="email" name="" id="" placeholder="" class="info-box" required>
+            </div>
+            <div class="label-container2">
+            <h2>Password</h2><br>
+            <input type="password" name="" id="" placeholder="" class="info-box" required>
+            </div>
+            
+            <div class="ai-id">
+                <input type="checkbox" name="" id="" required>
+                <h2 style="margin-left: 5px;">Prove not a bot</h2>
+            </div>
+           
+        </form>
+         <a href="thank-you-page.html"><button class="final-button">Log in</button></a>
+    </section>
+   
+</body>
+</html>
