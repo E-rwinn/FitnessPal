@@ -15,7 +15,7 @@ startBtn.addEventListener('click', () => {
     let totalSeconds = parseInt(minutesInput.value) * 60;
   
     if (isNaN(totalSeconds) || totalSeconds <= 0) {
-      minutesInput.value = "Please enter a valid number!";
+      minutesInput.value = "";
       return;
     }
   
