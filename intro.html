@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-* {
-    margin: 0%;
-}
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-   background-color: #F15223;
-  text-align: center;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Pals</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
-.info-container {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: center;
-  max-width: 600px;
-   padding: 24px;
-}
 
-.intro-header {
-  font-size: 48px;
-  color: white;
-  font-weight: bold;
-  font-family: "DM Sans", sans-serif;
-  margin: 0;
-}
+  <link rel="stylesheet" href="intro.css" />
 
-.word-container {
-  font-size: 12px;
-  font-family: "Poppins", sans-serif;
-  padding-left: 40px;
-  padding-right: 40px;
-  color: white;
-  margin: 0;
-}
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-button {
-  padding: 20px 110px;
-  font-size: 17px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  border: none;
-  border-radius: 16px;
-  background-color: white;
-  color: #000000;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: #F15223;
+      text-align: center;
+      font-family: "DM Sans", sans-serif;
+    }
 
-button:hover {
-  background-color: #f5f5f5;
-}
-    </style>
-    <link rel="stylesheet" href="intro.css">
-    <title>Fitness Pals</title>
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+      max-width: 600px;
+      padding: 24px;
+    }
+
+    .intro-header {
+      font-size: 48px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .word-container {
+      font-size: 14px;
+      font-family: "Poppins", sans-serif;
+      padding: 0 40px;
+      color: white;
+    }
+
+    button {
+      padding: 20px 110px;
+      font-size: 17px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      border: none;
+      border-radius: 16px;
+      background-color: white;
+      color: #000000;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
 </head>
 <body>
-    <div class="info-container">
-        <h1 class="intro-header">Fitness Pals</h1>
-        <p class="word-container">FIND OUT EXACTLY WHAT TRAINING WILL WORK OUT SPECIFICALLY FOR YOU</p>
-        <a href="form.html"><button>Continue</button></a>
-    </div>
+
+  <div class="info-container">
+    <h1 class="intro-header">Fitness Pals</h1>
+    <p class="word-container">
+      FIND OUT EXACTLY WHAT TRAINING WILL WORK OUT SPECIFICALLY FOR YOU
+    </p>
+    <a href="form.html">
+      <button>Continue</button>
+    </a>
+  </div>
+
 </body>
 </html>
