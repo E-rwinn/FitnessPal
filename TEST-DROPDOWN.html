@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Pals</title>
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Sen", sans-serif;
+    }
+
+    hr {
+      margin: 23px 33px;
+      background-color: black;
+    }
+
+    .container {
+     gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+    }
+
+    .header-image {
+      margin-top: 51px;
+      margin-left: 32px;
+    }
+
+    .setting {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 30px;
+      margin-left: 33px;
+    }
+      
+
+
+    /* Dropdown Styles */
+    .dropdown-box {
+      border-radius: 6px;
+      width: 100%;
+      max-width: 400px;
+      background-color: transparent;
+      margin-bottom: 30px;
+    }
+
+    .dropdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      padding-top: 28px;
+      padding-left: 33px;
+      padding-right: 33px;
+      padding-bottom: 12px;
+    }
+
+    .dropdown-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dropdown-title img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .arrow-icon {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-box.open .arrow-icon {
+      transform: rotate(-90deg);
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px 16px 16px;
+      animation: slideDown 0.3s ease forwards;
+    }
+
+    .dropdown-box.open .dropdown-content {
+      display: flex;
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .dropdown-item img {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Toggle switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #555;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2f81f7;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(16px);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: scaleY(0);
+      }
+      to {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
+  </style>
+</head>
+<body>
+    <!--HEADER -->
+     <section class="header">
+    <div class="container">
+      <a href="TEST-DROPDOWN.html"><img class="header-image" src="Arrow.png" alt=""></a>
+      
+      <p class="setting">Settings</p>
+    </div>
+  </section>
+
+  <section class="container">
+     <div class="info-container">
+    <p class="setting">General</p>
+  </div>
+    <div class="dropdown-box">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">
+      <div class="dropdown-title">
+        <img src="pfp.png" alt="" class="pfp-image">
+        <span>Moderation Settings</span>
+      </div>
+      <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" />
+    </div>
+
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <img src="user-icon.png" alt="Blocked Users" />
+        <span>Blocked users</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="dropdown-item">
+        <img src="limit-icon.png" alt="Interaction Limits" />
+        <span>Interaction limits</span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="dropdown-item">
+        <img src="code-icon.png" alt="Code Review Limits" />
+        <span>Code review limits</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+   <div class="dropdown-box">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">
+      <div class="dropdown-title">
+        <img src="icon.png" alt="Moderation Icon" />
+        <span>Moderation Settings</span>
+      </div>
+      <img class="arrow-icon" src="arrow.svg" alt="Dropdown Arrow" />
+    </div>
+
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <img src="user-icon.png" alt="Blocked Users" />
+        <span>Blocked users</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="dropdown-item">
+        <img src="limit-icon.png" alt="Interaction Limits" />
+        <span>Interaction limits</span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="dropdown-item">
+        <img src="code-icon.png" alt="Code Review Limits" />
+        <span>Code review limits</span>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <script>
+    function toggleDropdown(headerEl) {
+      const box = headerEl.closest('.dropdown-box');
+      box.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
