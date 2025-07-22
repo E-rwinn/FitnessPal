@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Pals</title>
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Sen", sans-serif;
+    }
+
+    hr {
+      margin: /*23px*/0px 33px;
+      background-color: black;
+    }
+
+    .container {
+     gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+    }
+
+    .header-image {
+      margin-top: 51px;
+      margin-left: 32px;
+    }
+
+    .setting {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 30px;
+      margin-left: 33px;
+    }
+    
+    .user-profile img {
+      width: 120px !important;
+      height: 120px !important;
+      border-radius: 100%;
+      margin-top: 35px;
+      border: 3px solid #FFF;
+      filter: drop-shadow(8px 8px 10px gray);
+    }
+
+    .edit-btn {
+      background-color: #F15225;
+      border: 3px solid #FFF;
+      filter: drop-shadow(8px 8px 10px gray);
+      border-radius: 100%;
+      margin-left: 235px;
+      height: 55px !important;
+      width: 55px !important;
+    }
+
+    .edit-btn1 img {
+      height: 23px;
+      width: 23px;
+    }
+     /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Popup box */
+    .popup {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .show {
+      display: flex;
+    }
+    
+   .info-text {
+    font-family: "Sen", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+   }
+   .burher {
+    font-family: "Sen", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #FFF; 
+     border: 3px solid #F15225;
+    border-radius: 100px; 
+    color: #F15225; 
+    padding: 13px 30px;
+   }
+
+     .burher1 {
+    font-family: "Sen", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #F15225; 
+     border: 5px solid #F15225;
+    border-radius: 100px; 
+    color: #FFF; 
+    padding: 10px 30px;
+   }
+  </style>
+</head>
+<body>
+    <!--HEADER -->
+     <section class="header">
+    <div class="container">
+      <a href="TEST-DROPDOWN.html"><img class="header-image" src="Arrow.png" alt=""></a>
+      
+      <p class="setting">Edit Profile</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="user-profile" style="text-align: center;">
+      <img src="https://media.newyorker.com/photos/624f484bb8900d61c847f8d7/1:1/w_2269,h_2269,c_limit/Long-Butler-09.jpg" alt="Users Profile Image">
+    </div> 
+     
+     <button onclick="showPopup()" class="edit-btn"><img src="Group 18317.png" alt="" class="edit-btn1"></button>
+
+ 
+  <div class="overlay" id="overlay">
+    <div class="popup">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h3>Hello 👋</h3>
+      <p>This is a simple popup box.</p>
+    </div>
+  </div>
+
+  <div class="info-container">
+    <p>UserName</p>
+    <input type="text" placeholder="{Username}" class="info-text"> 
+  </div>
+ <hr>
+    <div class="info-container">
+    <p>E-Mail</p>
+    <input type="email" name="email" id="email" placeholder="{E-Mail}" class="info-text">
+  </div>
+<hr>
+  <div class="info-container">
+    <p>Password</p>
+    <input type="password" name="password" id="password" placeholder="{Password}" class="info-text"required>
+  </div>
+<hr>
+
+  <a href="TEST-DROPDOWN.html"><button class="burher">Cancel</button></a>
+
+  <a href="TEST-DROPDOWN.html"><button class="burher1 ">Save</button></a>
+  </section>
+<script>
+    function showPopup() {
+      document.getElementById("overlay").classList.add("show");
+    }
+
+    function closePopup() {
+      document.getElementById("overlay").classList.remove("show");
+    }
+  </script>
+</body>
+</html>
