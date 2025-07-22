@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>home page</title>
+
+</head>
+
+<div>
+<img src="side.png" class="corner">
+</div>
+
+
+
+<body>
+
+
+    <div class="date">Today, July, 17</div>
+    <div class="timer">
+        <input type="text" id="minutesInput" placeholder="Minutes" />
+        <button id="startBtn">Start Timer</button>
+      </div>
+      
+      <script src="../js/timer.js"></script>
+
+<div class="username">Hi, guest</div>
+
+
+
+
+<h1 class="pal">My Plan</h1>
+
+<div class="Plans">
+<img src="icon.png" id="energy">
+
+<div class="Routine">
+
+    <div class="data">
+<p id="daily">Daily Routine</p>
+<p id="weight">Body Weight</p>
+<p id="workout">Workout 1 of 5</p>
+</div>
+
+<div class="exercise">
+    <img src="forward.png" id="forward">
+
+    <div class="under">
+    <p id="next">Next exercise</p>
+    <p id="lower">Lower Strength</p>
+</div>
+</div>
+
+<div class="newPlan">
+    <button class="add" id="New" onclick="toggleNewPlan()">Create New Plan</button> 
+    <img class="add" src="add.png">
+    <div class="dropdown hidden" id="addlam"> 
+    
+    </div>
+    <script src="../js/newPlan.js"></script>
+</div>
+</div>
+
+
+<div class="recentPlan">
+    <p id="Recent">Recent Plan</p>
+
+    <div class="dayy">
+    <img src="item.png">
+    <img src="item.png">
+    <img src="item.png">
+    <img src="item.png">
+</div>
+
+<div class="time">
+    <p>July 4</p>
+    <p>July 4</p>
+    <p>July 4</p>
+    <p>July 4</p>
+</div>
+<div class="wasd" id="viewall">
+    <button id="All">See All</button>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+</body>
+
+
+<footer class="bottom">
+ <a href="setting.html" id="setting-icon"><img src="https://cdn-icons-png.flaticon.com/512/126/126472.png" height="20px"></a>
+    <img src="home.png">
+    <img src="">
+</footer>
+
+
+</html>
