@@ -239,6 +239,7 @@ footer {
     height: 120px;
     display: flex;
     justify-content: center;
+    border: #DCCCC8 solid;
 }
 
 #setting-icon {
