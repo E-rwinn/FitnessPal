@@ -177,6 +177,8 @@ input[type="text"]::placeholder {
     justify-content: flex-end;
 }
 
+
+
 #New {
     margin-top: 2px;
     margin-right: 5px;
@@ -210,9 +212,24 @@ justify-content: space-around;
 #viewall {
     display: flex;
     justify-content: end;
-    margin-right: 15px;
-    height: 90px;
     align-items: end;
+    height: 90px;
+    
+    
+} 
+#All{
+    margin-right: 10px;
+    width: 55px;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    
+}
+
+#All:active
+{
+    text-decoration: underline;
+    text-underline-offset: 7px;
 }
 
 footer {
