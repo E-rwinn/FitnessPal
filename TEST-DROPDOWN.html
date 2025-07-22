@@ -66,7 +66,11 @@
   font-size: 10px;
   color: #9C9C9C;
   margin-top: 3px;
-  text-decoration: none;
+}
+
+.btn-containers {
+  display: flex;
+  place-items: center;
 }
 
     /* Dropdown Styles */
@@ -130,6 +134,11 @@
       gap: 10px;
     }
 
+      .dropdown-item1 {
+    
+      align-items: center;
+      gap: 10px;
+    }
     .dropdown-item img {
       width: 50px;
       height: 50px;
@@ -192,6 +201,69 @@
         transform: scaleY(1);
       }
     }
+
+    .switch {
+  margin-left: 124px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #F15225;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #F15225;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
   </style>
 </head>
 <body>
@@ -218,40 +290,138 @@
     </div>
 
     <div class="dropdown-content">
+       <p class="setting" style="margin-left: 0px; margin-top: 5px; font-size: 13px;">Account Setting</p>
       <div class="dropdown-item">
        <img src="https://media.newyorker.com/photos/624f484bb8900d61c847f8d7/1:1/w_2269,h_2269,c_limit/Long-Butler-09.jpg" alt="" height="45px" width="45px">
       <div class="item-information">
         <p class="name-text">Arnold Schwarzenegger</p>
-        <p class="edit-pin">Edit Your Profile</p>
+        <a href="edit-profile.html" style="text-decoration: none;"><p class="edit-pin">Edit Your Profile</p></a>
       </div>
       </div>
-
     </div>
   </div>
+
   <hr>
+
    <div class="dropdown-box">
     <div class="dropdown-header" onclick="toggleDropdown(this)">
       <div class="dropdown-title">
         <img src="https://cdn-icons-png.flaticon.com/128/4991/4991422.png" height="20px" class="pfp-image"/>
         <p class="para-title">Notification</p>
       </div>
+      <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 207px;" />
+    </div>
+
+    <div class="dropdown-content">
+      <div class="dropdown-item1">
+        <p class="setting" style="margin-left: 0px; margin-top: 5px; font-size: 13px;">Notification Setting</p>
+        <div class="btn-containers">
+            <p class="setting" style="margin-left: 0px; margin-top: 25px;">Push Notification</p>
+            <div class="btn-slider1" style="
+    margin-top: 20px;">
+              <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+            </div>
+        </div>
+  
+         <div class="btn-containers">
+            <p class="setting" style="margin-left: 0px; margin-top: 25px;">Disable Notification</p>
+            <div class="btn-slider1" style="
+    margin-top: 20px;">
+              <label class="switch" style="margin-left: 102px;">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+            </div>
+        </div>
+
+         <div class="btn-containers">
+            <p class="setting" style="margin-left: 0px; margin-top: 25px;">Turn Off Sound</p>
+            <div class="btn-slider1" style="
+    margin-top: 20px;">
+              <label class="switch" style="margin-left: 143px;">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+            </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+    <hr>
+
+   <div class="dropdown-box">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">
+      <div class="dropdown-title">
+        <img src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png" height="20px" class="pfp-image"/>
+        <p class="para-title">Logout</p>
+      </div>
+      <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 247px;" />
+    </div>
+   </div>
+ 
+   <hr>
+
+
+
+
+   <div class="dropdown-box">
+    <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px
+    ;">
+      <div class="dropdown-title">
+        <img src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" height="20px" class="pfp-image"/>
+        <p class="para-title">Deactivate</p>
+      </div>
+      <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 167px;" />
+    </div>
+
+
+   </div>
+   <!--
+   <hr>
+   <div class="info-container">
+    <p class="setting">Feedback</p>
+  </div>
+
+     <div class="dropdown-box">
+    <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px
+    ;">
+      <div class="dropdown-title">
+        <img src="https://cdn-icons-png.flaticon.com/128/550/550096.png" height="20px" class="pfp-image"/>
+        <p class="para-title">Flag Bug</p>
+      </div>
       <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 200px;" />
     </div>
 
     <div class="dropdown-content">
-      <div class="dropdown-item">
-       <h1>Hello World</h1>
-      </div>
-
-      <div class="dropdown-item">
+      <div class="dropdown-item1">
         
       </div>
+    </div>
+   </div>
 
-      <div class="dropdown-item">
-          
+   <hr>
+
+    <div class="dropdown-box">
+    <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px
+    ;">
+      <div class="dropdown-title">
+        <img src="https://cdn-icons-png.flaticon.com/128/3024/3024593.png" height="20px" class="pfp-image"/>
+        <p class="para-title">Send Feedback</p>
+      </div>
+      <img class="arrow-icon" src="Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 140px;" />
+    </div>
+
+    <div class="dropdown-content">
+      <div class="dropdown-item1">
+        
       </div>
     </div>
-  </div>
+   </div>
+  -->
   </section>
 
   <script>
