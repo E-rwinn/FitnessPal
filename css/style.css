@@ -184,6 +184,10 @@ input[type="text"]::placeholder {
     margin-right: 5px;
     text-decoration: underline;
     text-underline-offset: 7px;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 16px;
 }
 
 .recentPlan {
@@ -239,10 +243,76 @@ footer {
     height: 120px;
     display: flex;
     justify-content: center;
-    border: #DCCCC8 solid;
 }
 
 #setting-icon {
     margin-top: 43px;
 }
 
+.new-plan-ui {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  background-color: white;
+  padding: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.4s ease-in-out;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.new-plan-ui.visible {
+  bottom: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.new-plan-ui h2 {
+  margin-bottom: 15px;
+}
+
+.new-plan-ui input,
+.new-plan-ui textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.add-workout-btn,
+.submit-plan-btn {
+  background-color: #F15223;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#workoutContainer {
+  margin-top: 15px;
+}
+
+.workout-block {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
