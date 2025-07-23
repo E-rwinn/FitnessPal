@@ -95,10 +95,37 @@
 	background-color: #f15223;
 	border-radius: 15px;
 	width: 100%;
-	padding-top: 3px;
-	padding-bottom: 45px;
+	height: 120px;
+	display: flex;
+	justify-content: space-evenly;
+}
+.Top1 {
+	background-color: rgba(0, 0, 0, 0);
+}
+.Top2 {
+	background-color: rgba(0, 0, 0, 0);
+	height: 100px;
+	width: 100px;
+}
+.Day1 {
+	display: inline-block;
+	color: white;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
+	padding-top: 30px;
+	font-size: 18px;
+	padding-right: 126px;
+	display: inline-block;
+}
+.Time2 {
+	margin-top: -1vh;
+	font-size: 40px;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
 }
 .Posetion2 {
-	width: 50%;
+	width: 100%;
 	height: auto;
+	border-radius: 10px;
+	padding-top: 23px;
 }
