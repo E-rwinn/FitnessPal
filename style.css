@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@1,300&family=Poppins:wght@500&display=swap");
+.background {
+	background-color: #ffffff;
+}
+
+.Container {
+	display: flex;
+	gap: 64px;
+	margin-left: 11vw;
+	margin-top: 6vh;
+}
+.Font {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+	margin-top: 2vh;
+}
+.Today {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	margin-top: 3vh;
+	margin-left: 3vw;
+	display: block;
+}
+
+.Box2 {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.Day {
+	display: inline-block;
+	color: white;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
+}
+.Time {
+	margin-top: -1vh;
+	font-size: 50px;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+}
+
+.workout-container {
+	background-color: #f15223;
+	border-radius: 15px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.Top {
+	display: inline-block;
+	display: flex;
+	justify-content: space-evenly;
+}
+.bottom {
+	display: inline-block;
+}
+
+.Box3 {
+	background-color: rgba(0, 0, 0, 0);
+	max-width: 55%;
+}
+.Posetion {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+.bottom {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding-top: 25px;
+}
+.Button {
+	background-color: black;
+	color: white;
+	width: 140px;
+	border-radius: 25px;
+	padding: 4px;
+}
+.posetion1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.upcoming {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	margin-left: 3vw;
+	display: block;
+}
+.Box4 {
+	background-color: #f15223;
+	border-radius: 15px;
+	width: 100%;
+	height: 120px;
+	display: flex;
+	justify-content: space-evenly;
+}
+.Top1 {
+	background-color: rgba(0, 0, 0, 0);
+}
+.Top2 {
+	background-color: rgba(0, 0, 0, 0);
+	height: 100px;
+	width: 100px;
+}
+.Day1 {
+	display: inline-block;
+	color: white;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
+	padding-top: 30px;
+	font-size: 18px;
+	padding-right: 126px;
+	display: inline-block;
+}
+.Time2 {
+	margin-top: -1vh;
+	font-size: 40px;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+}
+.Posetion2 {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	padding-top: 23px;
+}
