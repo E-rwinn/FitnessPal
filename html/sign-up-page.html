@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
+  <title>Sign Up</title>
   <style>
     * {
       box-sizing: border-box;
@@ -19,7 +19,7 @@
       margin: 0;
     }
 
-    .login-container {
+    .signup-container {
       background: white;
       padding: 40px;
       border-radius: 12px;
@@ -28,7 +28,7 @@
       max-width: 400px;
     }
 
-    .login-container h2 {
+    .signup-container h2 {
       text-align: center;
       margin-bottom: 30px;
       color: #333;
@@ -46,7 +46,8 @@
     }
 
     input[type="text"],
-    input[type="password"] {
+    input[type="password"],
+    input[type="email"] {
       width: 100%;
       padding: 12px;
       font-size: 15px;
@@ -72,7 +73,7 @@
       margin-right: 8px;
     }
 
-    .login-btn {
+    .signup-btn {
       width: 100%;
       padding: 12px;
       font-size: 16px;
@@ -84,9 +85,8 @@
       transition: background 0.3s ease;
     }
 
-    .login-btn:hover {
+    .signup-btn:hover {
       background-color: #e94d1e;
-      
     }
 
     .footer-text {
@@ -108,12 +108,16 @@
 </head>
 <body>
 
-  <div class="login-container">
-    <h2>Login to Your Account</h2>
-    <form onsubmit="handleLogin(event)">
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+    <form onsubmit="handleSignUp(event)">
       <div class="form-group">
         <label for="username">Username</label>
         <input type="text" id="username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
@@ -125,32 +129,29 @@
         <label for="showPass">Show Password</label>
       </div>
 
-      <button type="submit" class="login-btn">Log In</button>
+      <button type="submit" class="signup-btn">Sign Up</button>
 
       <p class="footer-text">
-        Don't have an account? <a href="sign-up-page.html">Sign Up</a>
+        Already have an account? <a href="log-in-page.html">Log in</a>
       </p>
     </form>
   </div>
 
   <script>
-     function handleLogin(event) {
-      event.preventDefault();
-      const username = document.getElementById("username").value;
-
-      if (username) {
-        localStorage.setItem("loggedInUser", username);
-        window.location.href = "home.html"; 
-      } else {
-        alert("Please enter a username.");
-      }
-    }
-
     function togglePassword() {
-      const passwordInput = document.getElementById("password");
-      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+      const password = document.getElementById("password");
+      password.type = password.type === "password" ? "text" : "password";
     }
-  </script> 
+
+    function handleSignUp(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+
+      alert("Account created for: " + username + "\nEmail: " + email);
+    }
+  </script>
 
 </body>
 </html>
