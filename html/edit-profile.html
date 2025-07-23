@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fitness Pals - Edit Profile</title>
+  <title>FitnessPals</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
 
@@ -100,11 +100,14 @@
       font-weight: bold;
       font-size: 16px;
       background-color: #F15225;
-      border: 5px solid #F15225;
+      border: 6px solid #F15225;
       border-radius: 100px;
       color: #FFF;
       padding: 10px 30px;
       cursor: pointer;
+    }
+    .btn-saved {
+      text-align: center;
     }
   </style>
 </head>
@@ -112,7 +115,7 @@
   <!-- HEADER -->
   <section class="header">
     <div class="container">
-      <a href="TEST-DROPDOWN.html"><img class="header-image" src="Arrow.png" alt="Back Arrow"></a>
+      <a href="TEST-DROPDOWN.html"><img class="header-image" src="/assets/Arrow.png" alt="Back Arrow"></a>
       <p class="setting">Edit Profile</p>
     </div>
   </section>
@@ -121,7 +124,7 @@
     <div class="user-profile">
       <img
         id="profileImage"
-        src="https://media.newyorker.com/photos/624f484bb8900d61c847f8d7/1:1/w_2269,h_2269,c_limit/Long-Butler-09.jpg"
+        src="https://cdn-icons-png.flaticon.com/128/9131/9131549.png"
         alt="User Profile Image"
         title="Click to change profile picture"
       />
@@ -145,9 +148,11 @@
       <input type="password" id="password" placeholder="Password" class="info-text" />
     </div>
     <hr />
+    <div class="btn-saved">
+      <a href="TEST-DROPDOWN.html"><button class="burher">Cancel</button></a>
+        <button onclick="saveProfile()" class="burher1">Save</button>
+    </div>
 
-    <a href="TEST-DROPDOWN.html"><button class="burher">Cancel</button></a>
-    <button onclick="saveProfile()" class="burher1">Save</button>
   </section>
 
   <script src="/js/edit-profile.js">
