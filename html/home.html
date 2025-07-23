@@ -42,11 +42,11 @@
     <div class="data">
 <p id="daily">Daily Routine</p>
 <p id="weight">Body Weight</p>
-<p id="workout">Workout 1 of 5</p>
+<p id="workout">Workout 1 of <span id="totalWorkouts">5</span></p>
 </div>
 
 <div class="exercise">
-    <img src="../assets/forward.png" id="forward">
+    <img src="../assets/forward.png" id="forward" onclick="nextWorkout()">
 
     <div class="under">
     <p id="next">Next exercise</p>
@@ -60,7 +60,7 @@
     <div class="dropdown hidden" id="addlam"> 
     
     </div>
-    <script src="./js/newPlan.js"></script>
+    
 </div>
 </div>
 
@@ -90,7 +90,19 @@
 
 </div>
 
+<div class="new-plan-ui hidden" id="planUI">
+  <button onclick="toggleNewPlan()" class="close-btn">✕</button>
+  <h2>Create Your Plan</h2>
 
+  <input type="text" id="routineInput" placeholder="Routine Name">
+
+  <div id="workoutContainer"></div>
+
+  <button onclick="addWorkout()" class="add-workout-btn">Add Workout +</button>
+  <button onclick="submitPlan()" class="submit-plan-btn">Submit</button>
+</div>
+
+<script src="../js/newPlan.js"></script>
 
 </body>
 
