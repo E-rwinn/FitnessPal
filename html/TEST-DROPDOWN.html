@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fitness Pals</title>
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+  <title>FitnessPals</title>
   <style>
-     @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +23,7 @@
     }
 
     .container {
-     gap: 10px;
+      gap: 10px;
     }
 
     .header {
@@ -43,37 +43,36 @@
       margin-top: 30px;
       margin-left: 33px;
     }
-    
+
     .para-title {
       font-weight: bold;
       font-size: 16px;
     }
 
     .pfp-image {
-  width: 20px !important;
-  height: 20px !important;
-}
+      width: 20px !important;
+      height: 20px !important;
+    }
 
-.name-text {
-  font-family: "Sen", sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-}
+    .name-text {
+      font-family: "Sen", sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-.edit-pin {
-    font-family: "Sen", sans-serif;
-  font-weight: bold;
-  font-size: 10px;
-  color: #9C9C9C;
-  margin-top: 3px;
-}
+    .edit-pin {
+      font-family: "Sen", sans-serif;
+      font-weight: bold;
+      font-size: 10px;
+      color: #9C9C9C;
+      margin-top: 3px;
+    }
 
-.btn-containers {
-  display: flex;
-  place-items: center;
-}
+    .btn-containers {
+      display: flex;
+      place-items: center;
+    }
 
-    /* Dropdown Styles */
     .dropdown-box {
       border-radius: 6px;
       width: 100%;
@@ -86,12 +85,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      text-align: center;
       cursor: pointer;
-      padding-top: 28px;
-      padding-left: 33px;
-      padding-right: 33px;
-      padding-bottom: 12px;
+      padding: 28px 33px 12px;
     }
 
     .dropdown-title {
@@ -134,23 +129,22 @@
       gap: 10px;
     }
 
-      .dropdown-item1 {
-    
+    .dropdown-item1 {
       align-items: center;
       gap: 10px;
     }
+
     .dropdown-item img {
       width: 50px;
       height: 50px;
       border-radius: 100%;
     }
 
-    /* Toggle switch */
     .switch {
       position: relative;
       display: inline-block;
-      width: 36px;
-      height: 20px;
+      width: 60px;
+      height: 34px;
     }
 
     .switch input {
@@ -166,29 +160,29 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #555;
+      background-color: #ccc;
+      transition: .4s;
       border-radius: 34px;
-      transition: 0.4s;
     }
 
     .slider:before {
       position: absolute;
       content: "";
-      height: 14px;
-      width: 14px;
-      left: 3px;
-      bottom: 3px;
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
       background-color: white;
-      transition: 0.4s;
+      transition: .4s;
       border-radius: 50%;
     }
 
     input:checked + .slider {
-      background-color: #2f81f7;
+      background-color: #F15225;
     }
 
     input:checked + .slider:before {
-      transform: translateX(16px);
+      transform: translateX(26px);
     }
 
     @keyframes slideDown {
@@ -201,185 +195,154 @@
         transform: scaleY(1);
       }
     }
-
-    .switch {
-  margin-left: 124px;
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #F15225;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #F15225;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
   </style>
 </head>
 <body>
-    <!--HEADER -->
-     <section class="header">
+  <!-- HEADER -->
+  <section class="header">
     <div class="container">
-      <a href="/html/home.html"><img class="header-image" src="/assets/Arrow.png" alt=""></a>
-      
+      <a href="/html/home.html">
+        <img class="header-image" src="/assets/Arrow.png" alt="Back">
+      </a>
       <p class="setting">Settings</p>
     </div>
   </section>
 
+  <!-- CONTENT -->
   <section class="container">
-     <div class="info-container">
-    <p class="setting">General</p>
-  </div>
+    <div class="info-container">
+      <p class="setting">General</p>
+    </div>
+
+   
     <div class="dropdown-box">
-    <div class="dropdown-header" onclick="toggleDropdown(this)">
-      <div class="dropdown-title">
-        <img src="https://cdn-icons-png.flaticon.com/128/9308/9308008.png" alt="" class="pfp-image" height="20px" width="20px">
-        <p class="para-title">Account</p>
-      </div>
-      <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" />
-    </div>
-
-    <div class="dropdown-content">
-       <p class="setting" style="margin-left: 0px; margin-top: 5px; font-size: 13px;">Account Setting</p>
-      <div class="dropdown-item">
-       <img src="https://cdn-icons-png.flaticon.com/128/847/847969.png" alt="" height="45px" width="45px">
-      <div class="item-information">
-        <p class="name-text">Guest</p>
-        <a href="edit-profile.html" style="text-decoration: none;"><p class="edit-pin">Edit Your Profile</p></a>
-      </div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-   <div class="dropdown-box">
-    <div class="dropdown-header" onclick="toggleDropdown(this)">
-      <div class="dropdown-title">
-        <img src="https://cdn-icons-png.flaticon.com/128/4991/4991422.png" height="20px" class="pfp-image"/>
-        <p class="para-title">Notification</p>
-      </div>
-      <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 207px;" />
-    </div>
-
-    <div class="dropdown-content">
-      <div class="dropdown-item1">
-        <p class="setting" style="margin-left: 0px; margin-top: 5px; font-size: 13px;">Notification Setting</p>
-        <div class="btn-containers">
-            <p class="setting" style="margin-left: 0px; margin-top: 25px;">Push Notification</p>
-            <div class="btn-slider1" style="
-    margin-top: 20px;">
-              <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-            </div>
+      <div class="dropdown-header" onclick="toggleDropdown(this)">
+        <div class="dropdown-title">
+          <img src="https://cdn-icons-png.flaticon.com/128/9308/9308008.png" alt="Account Icon" class="pfp-image">
+          <p class="para-title">Account</p>
         </div>
-  
-         <div class="btn-containers">
-            <p class="setting" style="margin-left: 0px; margin-top: 25px;">Disable Notification</p>
-            <div class="btn-slider1" style="
-    margin-top: 20px;">
-              <label class="switch" style="margin-left: 102px;">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-            </div>
-        </div>
+        <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" />
+      </div>
 
-         <div class="btn-containers">
-            <p class="setting" style="margin-left: 0px; margin-top: 25px;">Turn Off Sound</p>
-            <div class="btn-slider1" style="
-    margin-top: 20px;">
-              <label class="switch" style="margin-left: 143px;">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-            </div>
+      <div class="dropdown-content">
+        <p class="setting" style="margin-left: 0; margin-top: 5px; font-size: 13px;">Account Setting</p>
+        <div class="dropdown-item">
+          <img src="https://cdn-icons-png.flaticon.com/128/847/847969.png" alt="Profile Icon" height="45px" width="45px">
+          <div class="item-information">
+            <p class="name-text" id="account-username">Guest</p>
+            <a href="edit-profile.html" style="text-decoration: none;">
+              <p class="edit-pin">Edit Your Profile</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-   </div>
 
     <hr>
 
-   <div class="dropdown-box">
-    <div class="dropdown-header" onclick="toggleDropdown(this)">
-      <div class="dropdown-title">
-        <img src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png" height="20px" class="pfp-image"/>
-        <p class="para-title">Logout</p>
+   
+    <div class="dropdown-box">
+      <div class="dropdown-header" onclick="toggleDropdown(this)">
+        <div class="dropdown-title">
+          <img src="https://cdn-icons-png.flaticon.com/128/4991/4991422.png" class="pfp-image"/>
+          <p class="para-title">Notification</p>
+        </div>
+        <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 207px;" />
       </div>
-      <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 247px;" />
+
+      <div class="dropdown-content">
+        <div class="dropdown-item1">
+          <p class="setting" style="margin-left: 0; margin-top: 5px; font-size: 13px;">Notification Setting</p>
+
+          <div class="btn-containers">
+            <p class="setting" style="margin-top: 25px;">Push Notification</p>
+            <div class="btn-slider1" style="margin-top: 20px;">
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="btn-containers">
+            <p class="setting" style="margin-top: 25px;">Disable Notification</p>
+            <div class="btn-slider1" style="margin-top: 20px;">
+              <label class="switch" style="margin-left: 102px;">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="btn-containers">
+            <p class="setting" style="margin-top: 25px;">Turn Off Sound</p>
+            <div class="btn-slider1" style="margin-top: 20px;">
+              <label class="switch" style="margin-left: 143px;">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-   </div>
+
+    <hr>
+
+    <!-- LOGOUT DROPDOWN -->
+    <div class="dropdown-box">
+      <div class="dropdown-header" onclick="toggleDropdown(this)">
+        <div class="dropdown-title">
+          <img src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png" class="pfp-image"/>
+          <p class="para-title">Logout</p>
+        </div>
+        <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 247px;" />
+      </div>
+    </div>
+
+    <hr>
+
+    
+    <div class="dropdown-box">
+      <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px;">
+        <div class="dropdown-title">
+          <img src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" class="pfp-image"/>
+          <p class="para-title">Deactivate</p>
+        </div>
+        <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 167px;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    function toggleDropdown(headerEl) {
+      const box = headerEl.closest('.dropdown-box');
+      box.classList.toggle('open');
+    }
+
  
-   <hr>
+    const username = localStorage.getItem("loggedInUser");
+    if (username) {
+      document.getElementById("account-username").textContent = username;
+    } else {
+  
+      window.location.href = "login.html";
+    }
+    window.onload = () => {
+      const username = localStorage.getItem("loggedInUser") || "Guest";
+      const profileImage = localStorage.getItem("profileImage") || "default-image-url.png";
 
 
+      document.querySelector(".name-text").textContent = username;
 
+      document.querySelector(".dropdown-item img").src = profileImage;
+    };
 
-   <div class="dropdown-box">
-    <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px
-    ;">
-      <div class="dropdown-title">
-        <img src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" height="20px" class="pfp-image"/>
-        <p class="para-title">Deactivate</p>
-      </div>
-      <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 167px;" />
-    </div>
+  </script>
+</body>
+</html>
 
-
-   </div>
    <!--
    <hr>
    <div class="info-container">
@@ -422,14 +385,4 @@ input:checked + .slider:before {
     </div>
    </div>
   -->
-  </section>
-
-  <script>
-    function toggleDropdown(headerEl) {
-      const box = headerEl.closest('.dropdown-box');
-      box.classList.toggle('open');
-    }
-  </script>
-
-</body>
-</html>
+  

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-
-    <title>FitnessPal</title>
+     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+  <title>FitnessPals</title>
     <link rel="shortcut icon" href="../assets/Group 18316.png 18316.png" type="image/x-icon">
 
 </head>
 
-<div>
+<div class="lines">
 <img src="../assets/side.png" class="corner">
 </div>
 
@@ -27,9 +27,17 @@
       
       <script src="../js/timer.js"></script>
 
-<div class="username">Hi, <span id="displayName"></span>! </div>
+<div class="username" id="welcome-message">Hi, <span id="welcome-message"></span>! </div>
 
-<script ></script>
+<script >
+     const username = localStorage.getItem("loggedInUser");
+    if (username) {
+      document.getElementById("welcome-message").textContent = `Hi, ${username}!`;
+    } else {
+      // If no username found, go back to login
+      window.location.href = "login.html";
+    }
+  </script>
 
 
 <h1 class="pal">My Plan</h1>
