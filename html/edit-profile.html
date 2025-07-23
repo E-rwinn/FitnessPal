@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
-  <title>FitnessPals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Pals - Edit Profile</title>
   <style>
-     @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
 
     * {
       margin: 0;
@@ -19,12 +18,12 @@
     }
 
     hr {
-      margin: /*23px*/0px 33px;
+      margin: 0px 33px;
       background-color: black;
     }
 
     .container {
-     gap: 10px;
+      gap: 10px;
     }
 
     .header {
@@ -44,159 +43,114 @@
       margin-top: 30px;
       margin-left: 33px;
     }
-    
+
+    .user-profile {
+      text-align: center;
+      margin-top: 35px;
+    }
+
     .user-profile img {
       width: 120px !important;
       height: 120px !important;
       border-radius: 100%;
-      margin-top: 35px;
       border: 3px solid #FFF;
       filter: drop-shadow(8px 8px 10px gray);
-    }
-
-    .edit-btn {
-      background-color: #F15225;
-      border: 3px solid #FFF;
-      filter: drop-shadow(8px 8px 10px gray);
-      border-radius: 100%;
-      margin-left: 235px;
-      height: 55px !important;
-      width: 55px !important;
-    }
-
-    .edit-btn1 img {
-      height: 23px;
-      width: 23px;
-    }
-     /* Overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Popup box */
-    .popup {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      position: relative;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      animation: fadeIn 0.3s ease;
-    }
-
-    /* Close button */
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 20px;
+      object-fit: cover;
       cursor: pointer;
-      color: #555;
+      transition: transform 0.2s ease;
+    }
+    .user-profile img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(10px 10px 15px #F15225);
     }
 
-    .close-btn:hover {
-      color: #000;
+    .info-container {
+      margin: 20px 33px;
     }
 
-    @keyframes fadeIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    .info-container p {
+      font-weight: bold;
+      margin-bottom: 5px;
     }
 
-    .show {
-      display: flex;
+    .info-text {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
-    
-   .info-text {
-    font-family: "Sen", sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-   }
-   .burher {
-    font-family: "Sen", sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    background-color: #FFF; 
-     border: 3px solid #F15225;
-    border-radius: 100px; 
-    color: #F15225; 
-    padding: 13px 30px;
-   }
 
-     .burher1 {
-    font-family: "Sen", sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    background-color: #F15225; 
-     border: 5px solid #F15225;
-    border-radius: 100px; 
-    color: #FFF; 
-    padding: 10px 30px;
-   }
+    .burher {
+      font-family: "Sen", sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: #FFF;
+      border: 3px solid #F15225;
+      border-radius: 100px;
+      color: #F15225;
+      padding: 13px 30px;
+      margin: 20px 20px 40px 33px;
+      cursor: pointer;
+    }
+
+    .burher1 {
+      font-family: "Sen", sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: #F15225;
+      border: 5px solid #F15225;
+      border-radius: 100px;
+      color: #FFF;
+      padding: 10px 30px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-    <!--HEADER -->
-     <section class="header">
+  <!-- HEADER -->
+  <section class="header">
     <div class="container">
-      <a href="TEST-DROPDOWN.html"><img class="header-image" src="Arrow.png" alt=""></a>
-      
+      <a href="TEST-DROPDOWN.html"><img class="header-image" src="Arrow.png" alt="Back Arrow"></a>
       <p class="setting">Edit Profile</p>
     </div>
   </section>
 
   <section class="container">
-    <div class="user-profile" style="text-align: center;">
-      <img src="https://media.newyorker.com/photos/624f484bb8900d61c847f8d7/1:1/w_2269,h_2269,c_limit/Long-Butler-09.jpg" alt="Users Profile Image">
-    </div> 
-     
-     <button onclick="showPopup()" class="edit-btn"><img src="Group 18317.png" alt="" class="edit-btn1"></button>
-
- 
-  <div class="overlay" id="overlay">
-    <div class="popup">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <h3>Hello 👋</h3>
-      <p>This is a simple popup box.</p>
+    <div class="user-profile">
+      <img
+        id="profileImage"
+        src="https://media.newyorker.com/photos/624f484bb8900d61c847f8d7/1:1/w_2269,h_2269,c_limit/Long-Butler-09.jpg"
+        alt="User Profile Image"
+        title="Click to change profile picture"
+      />
+      <input type="file" id="fileInput" accept="image/*" style="display: none" />
     </div>
-  </div>
 
-  <div class="info-container">
-    <p>UserName</p>
-    <input type="text" placeholder="{Username}" class="info-text"> 
-  </div>
- <hr>
     <div class="info-container">
-    <p>E-Mail</p>
-    <input type="email" name="email" id="email" placeholder="{E-Mail}" class="info-text">
-  </div>
-<hr>
-  <div class="info-container">
-    <p>Password</p>
-    <input type="password" name="password" id="password" placeholder="{Password}" class="info-text"required>
-  </div>
-<hr>
+      <p>Username</p>
+      <input type="text" id="username" placeholder="Username" class="info-text" />
+    </div>
+    <hr />
 
-  <a href="TEST-DROPDOWN.html"><button class="burher">Cancel</button></a>
+    <div class="info-container">
+      <p>Email</p>
+      <input type="email" id="email" placeholder="Email" class="info-text" />
+    </div>
+    <hr />
 
-  <a href="TEST-DROPDOWN.html"><button class="burher1 ">Save</button></a>
+    <div class="info-container">
+      <p>Password</p>
+      <input type="password" id="password" placeholder="Password" class="info-text" />
+    </div>
+    <hr />
+
+    <a href="TEST-DROPDOWN.html"><button class="burher">Cancel</button></a>
+    <button onclick="saveProfile()" class="burher1">Save</button>
   </section>
-<script>
-    function showPopup() {
-      document.getElementById("overlay").classList.add("show");
-    }
 
-    function closePopup() {
-      document.getElementById("overlay").classList.remove("show");
-    }
+  <script src="/js/edit-profile.js">
   </script>
 </body>
 </html>

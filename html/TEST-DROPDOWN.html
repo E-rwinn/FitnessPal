@@ -329,6 +329,16 @@
   
       window.location.href = "login.html";
     }
+    window.onload = () => {
+      const username = localStorage.getItem("loggedInUser") || "Guest";
+      const profileImage = localStorage.getItem("profileImage") || "default-image-url.png";
+
+
+      document.querySelector(".name-text").textContent = username;
+
+      document.querySelector(".dropdown-item img").src = profileImage;
+    };
+
   </script>
 </body>
 </html>
