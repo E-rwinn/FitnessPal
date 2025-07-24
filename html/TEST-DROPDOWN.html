@@ -216,7 +216,15 @@
       width: 100%;
       max-width: 375px;
     }
-
+.arrow-icon {
+      width: 24px;
+      height: 24px;
+      margin-left: 50px !important;
+      transition: transform 0.3s ease;
+    }
+    .dropdown-content {
+      padding-left: 33px !important;
+    }
 }
 
 /* iPhone 12 / 13 / 14 / 15 / 16 (Regular & Pro) */
@@ -363,14 +371,6 @@ input:checked + .slider:before {
   <div class="dropdown-content">
     <div class="dropdown-item1">
       <p class="setting" style="margin-left: 0; margin-top: 5px; font-size: 13px;">Notification Settings</p>
-
-      <div class="btn-containers">
-        <p class="setting">Disable Notification</p>
-        <label class="switch">
-          <input type="checkbox" id="disableToggle">
-          <span class="slider round"></span>
-        </label>
-      </div>
 
       <div class="btn-containers">
         <p class="setting">Turn Off Sound</p>
