@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
+ 
+  <link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon">
   <title>FitnessPals</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
@@ -195,6 +196,172 @@
         transform: scaleY(1);
       }
     }
+    /* iPhone 13 Mini and older small iPhones */
+@media (width: 375px) {
+ body {
+      font-family: "Sen", sans-serif;
+    }
+
+    hr {
+      margin: 23px 33px;
+      background-color: black;
+    }
+
+    .container {
+      gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+      max-width: 375px;
+    }
+.arrow-icon {
+      width: 24px;
+      height: 24px;
+      margin-left: 50px !important;
+      transition: transform 0.3s ease;
+    }
+    .dropdown-content {
+      padding-left: 33px !important;
+    }
+}
+
+/* iPhone 12 / 13 / 14 / 15 / 16 (Regular & Pro) */
+@media (width: 390px) {
+ body {
+      font-family: "Sen", sans-serif;
+    }
+
+    hr {
+      margin: 23px 33px;
+      background-color: black;
+    }
+
+    .container {
+      gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+      max-width: 390px;
+    }
+.arrow-icon {
+      width: 24px;
+      height: 24px;
+      margin-left: 50px !important;
+      transition: transform 0.3s ease;
+    }
+    .dropdown-content {
+      padding-left: 33px !important;
+    }
+}
+
+/* iPhone 14 Pro / iPhone 15 Pro / iPhone 16 Pro */
+@media (width: 393px) {
+  body {
+      font-family: "Sen", sans-serif;
+    }
+
+    hr {
+      margin: 23px 33px;
+      background-color: black;
+    }
+
+    .container {
+      gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+      max-width: 390px;
+    }
+.arrow-icon {
+      width: 24px;
+      height: 24px;
+      margin-left: 50px !important;
+      transition: transform 0.3s ease;
+    }
+    .dropdown-content {
+      padding-left: 33px !important;
+    }
+}
+
+/* iPhone 12/13 Pro Max */
+@media (width: 428px) {
+  body {
+      font-family: "Sen", sans-serif;
+    }
+
+    hr {
+      margin: 23px 33px;
+      background-color: black;
+    }
+
+    .container {
+      gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+      max-width: 428px;
+    }
+.arrow-icon {
+      width: 24px;
+      height: 24px;
+      margin-left: 50px !important;
+      transition: transform 0.3s ease;
+    }
+    .dropdown-content {
+      padding-left: 66px !important;
+    }
+    .dropdown-header {
+      padding-left: 33px;
+    }
+}
+
+/* iPhone 14/15/16 Pro Max */
+@media (width: 430px) {
+ body {
+      font-family: "Sen", sans-serif;
+    }
+
+    hr {
+      margin: 23px 33px;
+      background-color: black;
+    }
+
+    .container {
+      gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+      max-width: 430px;
+    }
+.arrow-icon {
+      width: 24px;
+      height: 24px;
+      margin-left: 50px !important;
+      transition: transform 0.3s ease;
+    }
+    .dropdown-content {
+      padding-left: 66px !important;
+    }
+    .dropdown-header {
+      padding-left: 33px;
+    }
+}
+
     .logout-btn {
   margin-top: 10px;
   padding: 10px 20px;
@@ -319,14 +486,6 @@ input:checked + .slider:before {
   <div class="dropdown-content">
     <div class="dropdown-item1">
       <p class="setting" style="margin-left: 0; margin-top: 5px; font-size: 13px;">Notification Settings</p>
-
-      <div class="btn-containers">
-        <p class="setting">Disable Notification</p>
-        <label class="switch">
-          <input type="checkbox" id="disableToggle">
-          <span class="slider round"></span>
-        </label>
-      </div>
 
       <div class="btn-containers">
         <p class="setting">Turn Off Sound</p>
