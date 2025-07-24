@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@1,300&family=Poppins:wght@500&display=swap");
+.Background {
+	background-color: #f15223;
+}
+.Container {
+	display: flex;
+	gap: 64px;
+	margin-left: 11vw;
+	margin-top: 6vh;
+}
+.Font {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
+	margin-top: 2vh;
+	padding-left: 15px;
+}
+.Container1 {
+	display: flex;
+	justify-content: space-evenly;
+}
+.Day {
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+	padding-top: 15px;
+	font-size: 20px;
+}
+.Exercise {
+	color: white;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
+	padding-top: 22px;
+	padding-left: 32px;
+}
+.img {
+	width: 18%;
+	height: auto;
+	/* padding-left: 25px; */
+	border-radius: 10px;
+}
+.Container3 {
+	display: flex;
+	padding-left: 27px;
+	padding-top: 22px;
+}
+.Exercise1 {
+	color: white;
+	font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
+	padding-top: 22px;
+	padding-left: 12px;
+}
