@@ -20,7 +20,22 @@
 <body>
 
 
-    <div class="date">Today, July, 28</div>
+  <div class="date"></div>
+
+<script>
+  const today = new Date();
+
+  const formatted = today.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
+  document.querySelector('.date').textContent = formatted;
+</script>
+
+ 
+
     <div class="timer">
         <input type="text" id="minutesInput" placeholder="Minutes" />
         <button id="startBtn">Start Timer</button>
