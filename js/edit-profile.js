@@ -1,9 +1,7 @@
-// Open file picker when clicking the profile image
 document.getElementById("profileImage").addEventListener("click", () => {
   document.getElementById("fileInput").click();
 });
 
-// Update profile image preview and save to localStorage
 document
   .getElementById("fileInput")
   .addEventListener("change", function (event) {
@@ -19,7 +17,6 @@ document
     }
   });
 
-// Save profile info to localStorage and update account info
 function saveProfile() {
   const username = document.getElementById("username").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -30,10 +27,9 @@ function saveProfile() {
   localStorage.setItem("userPassword", password);
 
   alert("Profile saved successfully!");
-  window.location.href = "TEST-DROPDOWN.html"; // Redirect after saving
+  window.location.href = "TEST-DROPDOWN.html";
 }
 
-// Load saved profile info and image on page load
 window.onload = function () {
   const savedImage = localStorage.getItem("profileImage");
   const savedUsername = localStorage.getItem("loggedInUser");
