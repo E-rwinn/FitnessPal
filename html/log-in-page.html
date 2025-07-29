@@ -167,22 +167,19 @@
     }
 
     function handleCredentialResponse(response) {
-      // The ID token JWT string
       const id_token = response.credential;
-
-      // Decode payload from JWT token to get user info
       const userObject = JSON.parse(atob(id_token.split('.')[1]));
 
-      // Save user's email or fallback to name or default
-      localStorage.setItem("loggedInUser", userObject.email || userObject.name || "GoogleUser");
+      // Use Google 'name' if available; otherwise, use the email prefix
+      const username = userObject.name || (userObject.email ? userObject.email.split('@')[0] : "GoogleUser");
 
-      // Redirect to home page
+      localStorage.setItem("loggedInUser", username);
       window.location.href = "home.html";
     }
 
     window.onload = function () {
       google.accounts.id.initialize({
-        client_id: '899373532299-dno9k1v6u83mn2ngmkh0dsgoc64g7vpg.apps.googleusercontent.com',  // <-- Replace this with your actual Client ID
+        client_id: '899373532299-dno9k1v6u83mn2ngmkh0dsgoc64g7vpg.apps.googleusercontent.com',
         callback: handleCredentialResponse
       });
 
@@ -191,8 +188,7 @@
         { theme: "outline", size: "large" }
       );
 
-      // Optionally prompt automatically
-      // google.accounts.id.prompt();
+      // Optional: google.accounts.id.prompt();
     };
   </script>
 
