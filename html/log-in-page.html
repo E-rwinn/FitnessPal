@@ -27,16 +27,17 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       width: 100%;
       max-width: 400px;
+      text-align: center;
     }
 
     .login-container h2 {
-      text-align: center;
       margin-bottom: 30px;
       color: #333;
     }
 
     .form-group {
       margin-bottom: 20px;
+      text-align: left;
     }
 
     label {
@@ -67,6 +68,7 @@
       margin-top: -10px;
       margin-bottom: 15px;
       font-size: 14px;
+      text-align: left;
     }
 
     .show-password input {
@@ -83,16 +85,15 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease;
+      margin-bottom: 20px;
     }
 
     .login-btn:hover {
       background-color: #e94d1e;
-      
     }
 
     .footer-text {
       margin-top: 15px;
-      text-align: center;
       font-size: 14px;
       color: #666;
     }
@@ -105,7 +106,17 @@
     .footer-text a:hover {
       text-decoration: underline;
     }
+
+    /* Google Sign-In container spacing */
+    #google-signin {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
   </style>
+
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
@@ -127,15 +138,18 @@
       </div>
 
       <button type="submit" class="login-btn">Log In</button>
-
-      <p class="footer-text">
-        Don't have an account? <a href="sign-up-page.html">Sign Up</a>
-      </p>
     </form>
+
+    <!-- Google Sign-In button will be rendered here -->
+    <div id="google-signin"></div>
+
+    <p class="footer-text">
+      Don't have an account? <a href="sign-up-page.html">Sign Up</a>
+    </p>
   </div>
 
   <script>
-     function handleLogin(event) {
+    function handleLogin(event) {
       event.preventDefault();
       const username = document.getElementById("username").value;
 
@@ -151,7 +165,32 @@
       const passwordInput = document.getElementById("password");
       passwordInput.type = passwordInput.type === "password" ? "text" : "password";
     }
-  </script> 
+
+    function handleCredentialResponse(response) {
+      const id_token = response.credential;
+      const userObject = JSON.parse(atob(id_token.split('.')[1]));
+
+      // Use Google 'name' if available; otherwise, use the email prefix
+      const username = userObject.name || (userObject.email ? userObject.email.split('@')[0] : "GoogleUser");
+
+      localStorage.setItem("loggedInUser", username);
+      window.location.href = "home.html";
+    }
+
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: '899373532299-dno9k1v6u83mn2ngmkh0dsgoc64g7vpg.apps.googleusercontent.com',
+        callback: handleCredentialResponse
+      });
+
+      google.accounts.id.renderButton(
+        document.getElementById('google-signin'),
+        { theme: "outline", size: "large" }
+      );
+
+      // Optional: google.accounts.id.prompt();
+    };
+  </script>
 
 </body>
 </html>
