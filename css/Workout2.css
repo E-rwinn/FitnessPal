@@ -1,0 +1,51 @@
+.background{
+    background-color: #F15223;
+}
+.Posetion{
+    width: 55%;
+    height: auto;
+    padding-left: 88px;
+    padding-top: 2px;
+}
+
+.Box{
+    color: white;
+}
+
+.Container {
+	display: flex;
+	gap: 64px;
+	margin-left: 11vw;
+	margin-top: 6vh;
+}
+.text{
+    font-family: "Inria Sans", sans-serif;
+	font-weight: 600;
+    color: white;
+    margin-left: 20px;
+    margin-top: 2vh;
+}
+.text2{
+    background-color: rgba(0, 0, 0, 0);
+    height: 180px;
+    width: 382px;
+    margin-top: 15px;
+    margin-left: 4vw;
+}
+.text2{
+    color: white;
+    font-family: "Inria Sans", sans-serif;
+	font-weight: 400;
+    font-size: 20px;
+    text-align: left;
+}
+.bottom{
+    background-color: black;
+    width: 124px;
+    height: 21px;
+    text-align: center;
+    margin-left: 139px;
+}
+.Button{
+    color: white;
+}

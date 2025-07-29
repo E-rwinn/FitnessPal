@@ -16,8 +16,6 @@ function addWorkout() {
   workoutDiv.innerHTML = `
     <h3>Workout ${workoutCount}</h3>
     <input type="text" placeholder="Workout Name" class="workout-name" />
-    <input type="text" placeholder="Sets" class="workout-sets" />
-    <textarea placeholder="Description" class="workout-desc"></textarea>
   `;
 
   container.appendChild(workoutDiv);

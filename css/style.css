@@ -83,6 +83,7 @@ input[type="text"]::placeholder {
     width: 50px;
     height: 40px;
     border: black 1px solid;
+    background-color: #DCCCC8;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     font-family: sans-serif;
