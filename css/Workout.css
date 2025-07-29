@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@1,300&family=Poppins:wght@500&display=swap");
+ @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
 .background {
 	background-color: #ffffff;
 }
@@ -9,6 +10,33 @@
 	margin-left: 11vw;
 	margin-top: 6vh;
 }
+* { 
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+}
+.container {
+      gap: 10px;
+    }
+
+    .header {
+      background: #F15225;
+      height: 209px;
+      width: 100%;
+    }
+
+    .header-image {
+      margin-top: 51px;
+      margin-left: 32px;
+    }
+
+    .setting {
+		font-family: "Sen", sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 30px;
+      margin-left: 33px;
+    }
 .Font {
 	font-family: "Inria Sans", sans-serif;
 	font-weight: 600;
