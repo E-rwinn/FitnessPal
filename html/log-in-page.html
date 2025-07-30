@@ -48,8 +48,7 @@
     }
 
     input[type="email"],
-    input[type="password"],
-    input[type="text"] {
+    input[type="password"] {
       width: 100%;
       padding: 12px;
       font-size: 15px;
@@ -109,6 +108,7 @@
       text-decoration: underline;
     }
 
+    /* Google Sign-In container spacing */
     #google-signin {
       margin-top: 10px;
       display: flex;
@@ -129,10 +129,10 @@
     <h2>Login to Your Account</h2>
     <form id="login-form">
       <div class="form-group">
+        <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" autocomplete="username" required />
+        <input type="text" id="username" autocomplete="username" required />
       </div>
-      <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" autocomplete="email" required />
       </div>
@@ -157,72 +157,6 @@
     </p>
   </div>
 
-  <script>
-    // Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyAKsNqr-UAkwGh2H6uD_ZXfwjwCsinB6bg",
-      authDomain: "fitnesspal-3c566.firebaseapp.com",
-      projectId: "fitnesspal-3c566",
-      storageBucket: "fitnesspal-3c566.appspot.com",
-      messagingSenderId: "860568935458",
-      appId: "1:860568935458:web:1f695b4693270d5869be7b",
-      measurementId: "G-DE14S51W80"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    // Toggle password visibility
-    document.getElementById('showPass').addEventListener('change', function () {
-      const passField = document.getElementById('password');
-      passField.type = this.checked ? 'text' : 'password';
-    });
-
-    // Email/password login handler
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const username = document.getElementById('username').value.trim(); // grabbed but not used yet
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
-
-      try {
-        const userCredential = await auth.signInWithEmailAndPassword(email, password);
-        alert(`Welcome back, ${userCredential.user.displayName || username || email}!`);
-        window.location.href = "../html/home.html";
-      } catch (error) {
-        alert(`Login failed: ${error.message}`);
-      }
-    });
-
-    // Google Sign-In callback
-    function handleCredentialResponse(response) {
-      const id_token = response.credential;
-      const credential = firebase.auth.GoogleAuthProvider.credential(id_token);
-
-      auth.signInWithCredential(credential)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          alert(`Welcome back, ${user.displayName || user.email}!`);
-          window.location.href = "../html/home.html";
-        })
-        .catch(error => {
-          alert(`Google sign-in failed: ${error.message}`);
-        });
-    }
-
-    window.onload = function () {
-      google.accounts.id.initialize({
-        client_id: '899373532299-dno9k1v6u83mn2ngmkh0dsgoc64g7vpg.apps.googleusercontent.com',
-        callback: handleCredentialResponse,
-        ux_mode: 'popup'
-      });
-
-      google.accounts.id.renderButton(
-        document.getElementById('google-signin'),
-        { theme: "outline", size: "large" }
-      );
-    };
-  </script>
+  <script src="/js/log-in.js"></script>
 </body>
 </html>
