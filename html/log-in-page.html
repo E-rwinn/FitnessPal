@@ -185,7 +185,7 @@
       try {
         const userCredential = await auth.signInWithEmailAndPassword(email, password);
         alert(`Welcome back, ${userCredential.user.displayName || email}!`);
-        window.location.href = "/html/home.html"; // Redirect on success
+        window.location.href = "https://fitness-pals.vercel.app/html/home.html"; // Redirect on success
       } catch (error) {
         alert(`Login failed: ${error.message}`);
       }
@@ -200,7 +200,7 @@
         .then((userCredential) => {
           const user = userCredential.user;
           alert(`Welcome back, ${user.displayName || user.email}!`);
-          window.location.href = "/html/home.html"; // Redirect on success
+          window.location.href = "https://fitness-pals.vercel.app/html/home.html"; // Redirect on success
         })
         .catch(error => {
           alert(`Google sign-in failed: ${error.message}`);
