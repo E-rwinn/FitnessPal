@@ -231,9 +231,14 @@ justify-content: space-around;
     display: flex;
     justify-content: space-around;
   }
+
+  .plan-images {
+    margin-top: 10px;
+  }
   
   .recent-img, .recent-date {
     width: 15%; 
+    height: 100%;
   }
   
   .recent-date {
