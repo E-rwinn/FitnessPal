@@ -36,15 +36,16 @@ function submitPlan() {
   
   mainTitle.textContent = routineName;
 
-
   workoutList = Array.from(workoutNames).map(input => input.value || "Unnamed Workout");
   currentWorkoutIndex = 0; 
-
 
   nextExercise.textContent = workoutList[currentWorkoutIndex];
   workoutText.textContent = `Workout ${currentWorkoutIndex + 1} of ${workoutList.length}`;
 
+  // NEW LINE → Save to recent plan slots
+  saveRecentPlan(routineName, workoutList);
 
+  // Close modal + reset
   document.getElementById("planUI").classList.remove("visible");
   document.getElementById("routineInput").value = "";
   document.getElementById("workoutContainer").innerHTML = "";
@@ -61,4 +62,4 @@ function nextWorkout() {
   
   document.getElementById("lower").textContent = workoutList[currentWorkoutIndex];
   document.getElementById("workout").textContent = `Workout ${currentWorkoutIndex + 1} of ${workoutList.length}`;
-}
+} 
