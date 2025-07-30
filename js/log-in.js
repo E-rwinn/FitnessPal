@@ -1,81 +1,23 @@
-function handleLogin(e) {
-  e.preventDefault();
-  const username = document.getElementById("username").value;
-
-  // Save username to localStorage
-  localStorage.setItem("username", username);
-
-  // Redirect to homepage
-  window.location.href = "home.html";
-}
-// Your Firebase config (replace with your own if needed)
-const firebaseConfig = {
-  apiKey: "AIzaSyAKsNqr-UAkwGh2H6uD_ZXfwjwCsinB6bg",
-  authDomain: "fitnesspal-3c566.firebaseapp.com",
-  projectId: "fitnesspal-3c566",
-  storageBucket: "fitnesspal-3c566.appspot.com",
-  messagingSenderId: "860568935458",
-  appId: "1:860568935458:web:1f695b4693270d5869be7b",
-  measurementId: "G-DE14S51W80",
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-
 // Toggle password visibility
 document.getElementById("showPass").addEventListener("change", function () {
   const passField = document.getElementById("password");
   passField.type = this.checked ? "text" : "password";
 });
 
-// Email/password login handler
-document.getElementById("login-form").addEventListener("submit", async (e) => {
+// Email/password login handler (localStorage version)
+document.getElementById("login-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
 
-  try {
-    const userCredential = await auth.signInWithEmailAndPassword(
-      email,
-      password
-    );
-    alert(`Welcome back, ${userCredential.user.displayName || email}!`);
+  // Simulate login logic (replace with real check if needed)
+  if (email && password) {
+    // Save email to localStorage (e.g., as a session token)
+    localStorage.setItem("username", email);
+    alert(`Welcome back, ${email}!`);
     window.location.href = "../html/home.html";
-  } catch (error) {
-    alert(`Login failed: ${error.message}`);
+  } else {
+    alert("Please enter both email and password.");
   }
 });
-
-// Google Sign-In callback for Google Identity Services
-function handleCredentialResponse(response) {
-  const id_token = response.credential;
-  const credential = firebase.auth.GoogleAuthProvider.credential(id_token);
-
-  auth
-    .signInWithCredential(credential)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      alert(`Welcome back, ${user.displayName || user.email}!`);
-      window.location.href = "../html/home.html";
-      // Redirect on success
-    })
-    .catch((error) => {
-      alert(`Google sign-in failed: ${error.message}`);
-    });
-}
-
-window.onload = function () {
-  google.accounts.id.initialize({
-    client_id:
-      "899373532299-dno9k1v6u83mn2ngmkh0dsgoc64g7vpg.apps.googleusercontent.com",
-    callback: handleCredentialResponse,
-    ux_mode: "popup",
-  });
-
-  google.accounts.id.renderButton(document.getElementById("google-signin"), {
-    theme: "outline",
-    size: "large",
-  });
-};

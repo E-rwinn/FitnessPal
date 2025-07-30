@@ -1,9 +1,3 @@
-function handleLogout() {
-  localStorage.removeItem("loggedInUser");
-  localStorage.removeItem("profileImage");
-  window.location.href = "../index.html";
-}
-//UP THERE IS FOR LOGGING IN//
 function handleDeleteAccount() {
   const confirmDelete = confirm(
     "Are you sure you want to delete your account?"
@@ -34,7 +28,6 @@ function submitBugReport() {
   }, 3000);
 }
 //UP THERE IS FOR THE BUG SECTION//
-
 function toggleDropdown(headerEl) {
   const box = headerEl.closest(".dropdown-box");
   box.classList.toggle("open");
@@ -43,16 +36,4 @@ function toggleDropdown(headerEl) {
 const username = localStorage.getItem("loggedInUser");
 if (username) {
   document.getElementById("account-username").textContent = username;
-} else {
-  window.location.href = "login.html";
 }
-window.onload = () => {
-  const username = localStorage.getItem("loggedInUser") || "Guest";
-  const profileImage =
-    localStorage.getItem("profileImage") ||
-    "https://cdn-icons-png.flaticon.com/128/847/847969.png";
-
-  document.querySelector(".name-text").textContent = username;
-
-  document.querySelector(".dropdown-item img").src = profileImage;
-};

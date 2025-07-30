@@ -347,7 +347,7 @@
 .arrow-icon {
       width: 24px;
       height: 24px;
-      margin-left: 50px !important;
+      margin-left: 100px !important;
       transition: transform 0.3s ease;
     }
     .dropdown-content {
