@@ -185,7 +185,7 @@
       try {
         const userCredential = await auth.signInWithEmailAndPassword(email, password);
         alert(`Welcome back, ${userCredential.user.displayName || email}!`);
-        window.location.href = "/html/dashboard.html"; // Change to your dashboard/home page
+        window.location.href = "/html/home.html"; // Change to your dashboard/home page
       } catch (error) {
         alert(`Login failed: ${error.message}`);
       }
@@ -200,7 +200,7 @@
         .then((userCredential) => {
           const user = userCredential.user;
           alert(`Welcome back, ${user.displayName || user.email}!`);
-          window.location.href = "/html/dashboard.html"; // Change as needed
+          window.location.href = "/html/home.html"; // Change as needed
         })
         .catch(error => {
           alert(`Google sign-in failed: ${error.message}`);
