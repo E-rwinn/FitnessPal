@@ -1,176 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/setting.css">
-  <link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon">
-  <title>FitnessPal</title>
-</head>
-<body>
-  <!-- HEADER -->
-  <section class="header">
-    <div class="container">
-      <a href="/html/home.html">
-        <img class="header-image" src="/assets/Arrow.png" alt="Back">
-      </a>
-      <p class="setting">Settings</p>
-    </div>
-  </section>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon" />
+		<link rel="stylesheet" href="../css/setting.css" />
+		<title>FitnessPal</title>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<section class="header">
+			<div class="container">
+				<a href="/html/home.html">
+					<img class="header-image" src="/assets/Arrow.png" alt="Back" />
+				</a>
+				<p class="setting">Settings</p>
+			</div>
+		</section>
 
-  <!-- CONTENT -->
-  <section class="container">
-    <div class="info-container">
-      <p class="setting">General</p>
-    </div>
+		<!-- CONTENT -->
+		<section class="container">
+			<div class="info-container">
+				<p class="setting">General</p>
+			</div>
 
-   
-    <div class="dropdown-box">
-      <div class="dropdown-header" onclick="toggleDropdown(this)">
-        <div class="dropdown-title">
-          <img src="https://cdn-icons-png.flaticon.com/128/9308/9308008.png" alt="Account Icon" class="pfp-image">
-          <p class="para-title">Account</p>
-        </div>
-        <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" />
-      </div>
+			<div class="dropdown-box">
+				<div class="dropdown-header" onclick="toggleDropdown(this)">
+					<div class="dropdown-title">
+						<img
+							src="https://cdn-icons-png.flaticon.com/128/9308/9308008.png"
+							alt="Account Icon"
+							class="pfp-image"
+						/>
+						<p class="para-title">Account</p>
+					</div>
+					<img
+						class="arrow-icon"
+						src="/assets/Arrow-dropdown.png"
+						alt="Dropdown Arrow"
+					/>
+				</div>
 
-      <div class="dropdown-content">
-        <p class="setting" style="margin-left: 0; margin-top: 5px; font-size: 13px;">Account Setting</p>
-        <div class="dropdown-item">
-         <img src="https://cdn-icons-png.flaticon.com/128/847/847969.png" alt="" height="45px" width="45px">
-          <div class="item-information">
-            <p class="name-text" id="account-username">Guest</p>
-            <a href="edit-profile.html" style="text-decoration: none;">
-              <p class="edit-pin">Edit Your Profile</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+				<div class="dropdown-content">
+					<p
+						class="setting"
+						style="margin-left: 0; margin-top: 5px; font-size: 13px"
+					>
+						Account Setting
+					</p>
+					<div class="dropdown-item">
+						<img
+							src="https://cdn-icons-png.flaticon.com/128/847/847969.png"
+							alt=""
+							height="45px"
+							width="45px"
+						/>
+						<div class="item-information">
+							<p class="name-text" id="account-username">Guest</p>
+							<a href="edit-profile.html" style="text-decoration: none">
+								<p class="edit-pin">Edit Your Profile</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-    <hr>
+			<hr />
 
-   
-   <div class="dropdown-box">
-  <div class="dropdown-header" onclick="toggleDropdown(this)">
-    <div class="dropdown-title">
-      <img src="https://cdn-icons-png.flaticon.com/128/10629/10629003.png" class="pfp-image"/>
-      <p class="para-title">Audio</p>
-    </div>
-    <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 207px;" />
-  </div>
+			<div class="dropdown-box">
+				<div class="dropdown-header" onclick="toggleDropdown(this)">
+					<div class="dropdown-title">
+						<img
+							src="https://cdn-icons-png.flaticon.com/128/10629/10629003.png"
+							class="pfp-image"
+						/>
+						<p class="para-title">Audio</p>
+					</div>
+					<img
+						class="arrow-icon"
+						src="/assets/Arrow-dropdown.png"
+						alt="Dropdown Arrow"
+						style="margin-left: 207px"
+					/>
+				</div>
 
-  <div class="dropdown-content">
-    <div class="dropdown-item1">
-      <p class="setting" style="margin-left: 0; margin-top: 5px; font-size: 13px;">Audio Settings</p>
+				<div class="dropdown-content">
+					<div class="dropdown-item1">
+						<p
+							class="setting"
+							style="margin-left: 0; margin-top: 5px; font-size: 13px"
+						>
+							Audio Settings
+						</p>
 
-      <div class="btn-containers" style="
-    margin-top: 45px;
-">
-        <p class="setting" style="margin-top: 0px;">Turn Off Sound</p>
-        <label class="switch">
-          <input type="checkbox" id="soundToggle">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  
-</script>
-    <hr>
+						<div class="btn-containers" style="margin-top: 45px">
+							<p class="setting" style="margin-top: 0px">Turn Off Sound</p>
+							<label class="switch">
+								<input type="checkbox" id="soundToggle" />
+								<span class="slider round"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script></script>
+			<hr />
 
-  <!-- LOGOUT DROPDOWN -->
-<div class="dropdown-box" id="logout-box">
-  <div class="dropdown-header" onclick="toggleDropdown(this)">
-    <div class="dropdown-title">
-      <img src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png" class="pfp-image"/>
-      <p class="para-title">Logout</p>
-    </div>
-    <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" />
-  </div>
+			<!-- LOGOUT DROPDOWN -->
+			<div class="dropdown-box" id="logout-box">
+				<div class="dropdown-header" onclick="toggleDropdown(this)">
+					<div class="dropdown-title">
+						<img
+							src="https://cdn-icons-png.flaticon.com/128/1828/1828427.png"
+							class="pfp-image"
+						/>
+						<p class="para-title">Logout</p>
+					</div>
+					<img
+						class="arrow-icon"
+						src="/assets/Arrow-dropdown.png"
+						alt="Dropdown Arrow"
+					/>
+				</div>
 
-  <div class="dropdown-content" style="padding-left: 66px;">
-    <p class="setting" style="margin-left: 0; margin-top: 5px; font-size: 13px;">
-      Are you sure you want to log out?
-    </p>
-    <button onclick="handleLogout()" class="logout-btn">Log Out</button>
-  </div>
-</div>
+				<div class="dropdown-content" style="padding-left: 66px">
+					<p
+						class="setting"
+						style="margin-left: 0; margin-top: 5px; font-size: 13px"
+					>
+						Are you sure you want to log out?
+					</p>
+					<button onclick="handleLogout()" class="logout-btn">Log Out</button>
+				</div>
+			</div>
 
-    <hr>
+			<hr />
 
-    
-    <div class="dropdown-box">
-  <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px;">
-    <div class="dropdown-title">
-      <img src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png" class="pfp-image"/>
-      <p class="para-title">Delete Account</p>
-    </div>
-    <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 167px;" />
-  </div>
+			<div class="dropdown-box">
+				<div
+					class="dropdown-header"
+					onclick="toggleDropdown(this)"
+					style="justify-content: space-between; gap: 50px"
+				>
+					<div class="dropdown-title">
+						<img
+							src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png"
+							class="pfp-image"
+						/>
+						<p class="para-title">Delete Account</p>
+					</div>
+					<img
+						class="arrow-icon"
+						src="/assets/Arrow-dropdown.png"
+						alt="Dropdown Arrow"
+						style="margin-left: 167px"
+					/>
+				</div>
 
-  <div class="dropdown-content" style="padding-left: 66px;">
-    <p class="setting" style="margin-left: 0; font-size: 13px;">Are you sure you want to delete your account? This cannot be undone.</p>
-    <button onclick="handleDeleteAccount()" class="logout-btn">
-      Yes, Delete My Account
-    </button>
-  </div>
-</div>
+				<div class="dropdown-content" style="padding-left: 66px">
+					<p class="setting" style="margin-left: 0; font-size: 13px">
+						Are you sure you want to delete your account? This cannot be undone.
+					</p>
+					<button onclick="handleDeleteAccount()" class="logout-btn">
+						Yes, Delete My Account
+					</button>
+				</div>
+			</div>
 
-    <hr>
-   <div class="info-container">
-    <p class="setting">Feedback</p>
-  </div>
+			<hr />
+			<div class="info-container">
+				<p class="setting">Feedback</p>
+			</div>
 
- <div class="dropdown-box">
-  <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px;">
-    <div class="dropdown-title">
-      <img src="https://cdn-icons-png.flaticon.com/128/550/550096.png" height="20px" class="pfp-image" />
-      <p class="para-title">Report a Bug</p>
-    </div>
-    <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 200px;" />
-  </div>
+			<div class="dropdown-box">
+				<div
+					class="dropdown-header"
+					onclick="toggleDropdown(this)"
+					style="justify-content: space-between; gap: 50px"
+				>
+					<div class="dropdown-title">
+						<img
+							src="https://cdn-icons-png.flaticon.com/128/550/550096.png"
+							height="20px"
+							class="pfp-image"
+						/>
+						<p class="para-title">Report a Bug</p>
+					</div>
+					<img
+						class="arrow-icon"
+						src="/assets/Arrow-dropdown.png"
+						alt="Dropdown Arrow"
+						style="margin-left: 200px"
+					/>
+				</div>
 
-  <div class="dropdown-content" style="padding-left: 66px;">
-    <label for="bug-description" class="setting" style="margin-left: 0; font-size: 13px;">Describe the bug:</label>
-    <textarea id="bug-description" placeholder="What's the issue?" style="width: 100%; max-width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc; resize: vertical;"></textarea>
-    
-    <button onclick="submitBugReport()" class="logout-btn">
-      Submit Bug
-    </button>
+				<div class="dropdown-content" style="padding-left: 66px">
+					<label
+						for="bug-description"
+						class="setting"
+						style="margin-left: 0; font-size: 13px"
+						>Describe the bug:</label
+					>
+					<textarea
+						id="bug-description"
+						placeholder="What's the issue?"
+						style="
+							width: 100%;
+							max-width: 100%;
+							padding: 10px;
+							margin-top: 10px;
+							border-radius: 6px;
+							border: 1px solid #ccc;
+							resize: vertical;
+						"
+					></textarea>
 
-    <p id="bug-report-message" style="font-size: 13px; color: green; margin-top: 8px; display: none;">
-      Bug report submitted!
-    </p>
-  </div>
-</div>
+					<button onclick="submitBugReport()" class="logout-btn">
+						Submit Bug
+					</button>
 
-   <hr>
+					<p
+						id="bug-report-message"
+						style="
+							font-size: 13px;
+							color: green;
+							margin-top: 8px;
+							display: none;
+						"
+					>
+						Bug report submitted!
+					</p>
+				</div>
+			</div>
 
-    <div class="dropdown-box">
-  <div class="dropdown-header" onclick="toggleDropdown(this)" style="justify-content: space-between; gap: 50px;">
-    <div class="dropdown-title">
-      <img src="https://cdn-icons-png.flaticon.com/128/3024/3024593.png" height="20px" class="pfp-image"/>
-      <p class="para-title">Send Feedback</p>
-    </div>
-    <img class="arrow-icon" src="/assets/Arrow-dropdown.png" alt="Dropdown Arrow" style="margin-left: 140px;" />
-  </div>
+			<hr />
 
-  <div class="dropdown-content" style="padding-left: 66px;">
-    <label for="feedback-text" class="setting" style="margin-left: 0; font-size: 13px;">We'd love to hear your thoughts:</label>
-    <textarea id="feedback-text" placeholder="Type your feedback here..." style="width: 100%; max-width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc; resize: vertical;"></textarea>
-    
-    <button onclick="submitFeedback()" class="logout-btn">
-      Submit Feedback
-    </button>
+			<div class="dropdown-box">
+				<div
+					class="dropdown-header"
+					onclick="toggleDropdown(this)"
+					style="justify-content: space-between; gap: 50px"
+				>
+					<div class="dropdown-title">
+						<img
+							src="https://cdn-icons-png.flaticon.com/128/3024/3024593.png"
+							height="20px"
+							class="pfp-image"
+						/>
+						<p class="para-title">Send Feedback</p>
+					</div>
+					<img
+						class="arrow-icon"
+						src="/assets/Arrow-dropdown.png"
+						alt="Dropdown Arrow"
+						style="margin-left: 140px"
+					/>
+				</div>
 
     <p id="feedback-message" style="font-size: 13px; color: green; margin-top: 8px; display: none;">
       Thank you for your feedback!
     </p>
   </div>
 </div>
-<script src="/js/setting.js"></script>
-</body>
+
+				<div class="dropdown-content" style="padding-left: 66px">
+					<label
+						for="feedback-text"
+						class="setting"
+						style="margin-left: 0; font-size: 13px"
+						>We'd love to hear your thoughts:</label
+					>
+					<textarea
+						id="feedback-text"
+						placeholder="Type your feedback here..."
+						style="
+							width: 100%;
+							max-width: 100%;
+							padding: 10px;
+							margin-top: 10px;
+							border-radius: 6px;
+							border: 1px solid #ccc;
+							resize: vertical;
+						"
+					></textarea>
+
+					<button onclick="submitFeedback()" class="logout-btn">
+						Submit Feedback
+					</button>
+
+					<p
+						id="feedback-message"
+						style="
+							font-size: 13px;
+							color: green;
+							margin-top: 8px;
+							display: none;
+						"
+					>
+						Thank you for your feedback!
+					</p>
+				</div>
+			</div>
+		</section>
+		<script src="/js/setting.js"></script>
+	</body>
 </html>
+
