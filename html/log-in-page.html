@@ -185,7 +185,7 @@
       try {
         const userCredential = await auth.signInWithEmailAndPassword(email, password);
         alert(`Welcome back, ${userCredential.user.displayName || email}!`);
-        window.location.href = "https://fitness-pals.vercel.app/html/home.html"; // Redirect on success
+        window.location.href = "home.html";
       } catch (error) {
         alert(`Login failed: ${error.message}`);
       }
@@ -200,7 +200,8 @@
         .then((userCredential) => {
           const user = userCredential.user;
           alert(`Welcome back, ${user.displayName || user.email}!`);
-          window.location.href = "https://fitness-pals.vercel.app/html/home.html"; // Redirect on success
+          window.location.href = "home.html";
+ // Redirect on success
         })
         .catch(error => {
           alert(`Google sign-in failed: ${error.message}`);
@@ -211,7 +212,7 @@
       google.accounts.id.initialize({
         client_id: '899373532299-dno9k1v6u83mn2ngmkh0dsgoc64g7vpg.apps.googleusercontent.com',
         callback: handleCredentialResponse,
-        ux_mode: 'popup' // Optional popup instead of redirect
+        ux_mode: 'popup' 
       });
 
       google.accounts.id.renderButton(
@@ -219,8 +220,6 @@
         { theme: "outline", size: "large" }
       );
 
-      // Optional: automatically prompt One-Tap sign-in
-      // google.accounts.id.prompt();
     };
   </script>
 
