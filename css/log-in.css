@@ -1,0 +1,109 @@
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #F15223;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+    }
+
+    .show-password {
+      display: flex;
+      align-items: center;
+      margin-top: -10px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .show-password input {
+      margin-right: 8px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background: #F15223;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .login-btn:hover {
+      background-color: #e94d1e;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .footer-text a {
+      color: #F15223;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Google Sign-In container spacing */
+    #google-signin {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
