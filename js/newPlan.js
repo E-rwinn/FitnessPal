@@ -42,10 +42,10 @@ function submitPlan() {
   nextExercise.textContent = workoutList[currentWorkoutIndex];
   workoutText.textContent = `Workout ${currentWorkoutIndex + 1} of ${workoutList.length}`;
 
-  // NEW LINE → Save to recent plan slots
+
   saveRecentPlan(routineName, workoutList);
 
-  // Close modal + reset
+
   document.getElementById("planUI").classList.remove("visible");
   document.getElementById("routineInput").value = "";
   document.getElementById("workoutContainer").innerHTML = "";

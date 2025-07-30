@@ -182,7 +182,9 @@ input[type="text"]::placeholder {
     justify-content: flex-end;
 }
 
-
+.add {
+    margin-right: 10px;
+}
 
 #New {
     margin-top: 2px;
@@ -218,6 +220,28 @@ justify-content: space-around;
     font-size: 16px;
     color: #7F7F7F;
 }
+
+
+.holderR {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .plan-images, .plan-dates {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .recent-img, .recent-date {
+    width: 15%; 
+  }
+  
+  .recent-date {
+    text-align: center;
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
 
 #viewall {
     display: flex;
