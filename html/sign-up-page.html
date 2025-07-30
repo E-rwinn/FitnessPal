@@ -120,11 +120,11 @@
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" required />
+        <input type="email" id="email" required autocomplete="email" />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" required />
+        <input type="password" id="password" required autocomplete="new-password" />
       </div>
 
       <div class="show-password">
@@ -145,16 +145,16 @@
 
   <script>
     // Your Firebase config - replace if needed
-    const firebaseConfig = {
+   const firebaseConfig = {
       apiKey: "AIzaSyAKsNqr-UAkwGh2H6uD_ZXfwjwCsinB6bg",
       authDomain: "fitnesspal-3c566.firebaseapp.com",
       projectId: "fitnesspal-3c566",
-      storageBucket: "fitnesspal-3c566.firebasestorage.app",
+      storageBucket: "fitnesspal-3c566.appspot.com", // ✅ fixed here
       messagingSenderId: "860568935458",
       appId: "1:860568935458:web:1f695b4693270d5869be7b",
       measurementId: "G-DE14S51W80"
     };
-
+//TESTING THIS//
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
@@ -179,6 +179,7 @@
         // TODO: redirect to home page or update UI
       } catch (error) {
         alert(`Error: ${error.message}`);
+        window.location.href = "/html/welcome.html"; // or dashboard.html
       }
     });
 
