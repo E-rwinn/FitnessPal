@@ -42,14 +42,19 @@
       
       <script src="../js/timer.js"></script>
 
-<div class="username" id="welcome-message">Hi, <span id="welcome-message"></span>! </div>
+<!-- home.html -->
+<div class="username">Hi, <span id="welcome-message"></span>!</div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const username = localStorage.getItem("username");
 
     if (username) {
       const welcomeMessage = document.getElementById("welcome-message");
-      welcomeMessage.textContent = username;
+      if (welcomeMessage) {
+        welcomeMessage.textContent = username;
+      }
+    } else {
+      console.log("No username found in localStorage.");
     }
   });
 </script>
