@@ -48,8 +48,8 @@
     const username = localStorage.getItem("username");
 
     if (username) {
-      const welcomeMessage = document.getElementById("welcomeMessage");
-      welcomeMessage.textContent = `Welcome, ${username}!`;
+      const welcomeMessage = document.getElementById("welcome-message");
+      welcomeMessage.textContent = username;
     }
   });
 </script>
