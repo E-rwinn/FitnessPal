@@ -1,23 +1,27 @@
-// Toggle password visibility
-document.getElementById("showPass").addEventListener("change", function () {
-  const passField = document.getElementById("password");
-  passField.type = this.checked ? "text" : "password";
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+  const showPassCheckbox = document.getElementById("showPass");
+  const passwordField = document.getElementById("password");
 
-// Email/password login handler (localStorage version)
-document.getElementById("login-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+  // Show/hide password
+  if (showPassCheckbox && passwordField) {
+    showPassCheckbox.addEventListener("change", function () {
+      passwordField.type = this.checked ? "text" : "password";
+    });
+  }
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
+  // Handle login form submit
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  // Simulate login logic (replace with real check if needed)
-  if (email && password) {
-    // Save email to localStorage (e.g., as a session token)
-    localStorage.setItem("username", email);
-    alert(`Welcome back, ${email}!`);
-    window.location.href = "../html/home.html";
-  } else {
-    alert("Please enter both email and password.");
+      const username = document.getElementById("username").value;
+
+      // Save to localStorage
+      localStorage.setItem("username", username);
+
+      // Redirect to home page
+      window.location.href = "home.html";
+    });
   }
 });

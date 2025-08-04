@@ -1,7 +1,10 @@
 let savedPlans = []; // store recent plans
 
 function saveRecentPlan(routineName, workoutList) {
-  const dateStr = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  const dateStr = new Date().toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
   const recentImgs = document.querySelectorAll(".recent-img");
   const recentDates = document.querySelectorAll(".recent-date");
 
@@ -16,18 +19,17 @@ function saveRecentPlan(routineName, workoutList) {
     slotIndex = 0;
   }
 
-
-  recentImgs[slotIndex].dataset.plan = JSON.stringify({ routineName, workoutList });
+  recentImgs[slotIndex].dataset.plan = JSON.stringify({
+    routineName,
+    workoutList,
+  });
   recentDates[slotIndex].textContent = dateStr;
 
-
   recentImgs[slotIndex].onclick = () => restorePlan(slotIndex);
-
 
   savedPlans[slotIndex] = { routineName, workoutList, date: dateStr };
   localStorage.setItem("recentPlans", JSON.stringify(savedPlans));
 }
-
 
 function restorePlan(index) {
   const recentImgs = document.querySelectorAll(".recent-img");
@@ -36,15 +38,15 @@ function restorePlan(index) {
 
   const { routineName, workoutList } = JSON.parse(planData);
 
-
   window.workoutList = workoutList;
   window.currentWorkoutIndex = 0;
 
   document.getElementById("weight").textContent = routineName;
   document.getElementById("lower").textContent = workoutList[0];
-  document.getElementById("workout").textContent = `Workout 1 of ${workoutList.length}`;
+  document.getElementById(
+    "workout"
+  ).textContent = `Workout 1 of ${workoutList.length}`;
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const saved = JSON.parse(localStorage.getItem("recentPlans")) || [];
@@ -60,4 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
       recentImgs[i].onclick = () => restorePlan(i);
     }
   });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("loggedInUser");
+
+  if (user) {
+    const welcomeDiv = document.getElementById("welcome-message");
+    welcomeDiv.innerHTML = `<h2>Welcome back, ${user}!</h2>`;
+    welcomeDiv.style.padding = "20px";
+    welcomeDiv.style.textAlign = "center";
+  }
 });

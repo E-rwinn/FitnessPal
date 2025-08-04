@@ -43,6 +43,16 @@
       <script src="../js/timer.js"></script>
 
 <div class="username" id="welcome-message">Hi, <span id="welcome-message"></span>! </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem("username");
+
+    if (username) {
+      const welcomeMessage = document.getElementById("welcomeMessage");
+      welcomeMessage.textContent = `Welcome, ${username}!`;
+    }
+  });
+</script>
 
 <h1 class="pal">My Plan</h1>
 
