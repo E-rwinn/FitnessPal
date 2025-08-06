@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (user) {
     const welcomeDiv = document.getElementById("welcome-message");
-    welcomeDiv.innerHTML = `<h2>Welcome back, ${user}!</h2>`;
+    welcomeDiv.innerHTML = `<h2>Hi, ${user}!</h2>`;
     welcomeDiv.style.padding = "20px";
     welcomeDiv.style.textAlign = "center";
   }
