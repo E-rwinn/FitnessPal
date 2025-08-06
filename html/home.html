@@ -43,18 +43,18 @@
       <script src="../js/timer.js"></script>
 
 <!-- home.html -->
-<div class="username">Hi, <span id="welcome-message"></span>!</div>
+<div class="usename">Hi, <span id="welcome-message"></span>!</div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const username = localStorage.getItem("username");
+    const usename = localStorage.getItem("usename");
 
-    if (username) {
+    if (usename) {
       const welcomeMessage = document.getElementById("welcome-message");
       if (welcomeMessage) {
-        welcomeMessage.textContent = username;
+        welcomeMessage.textContent = usename;
       }
     } else {
-      console.log("No username found in localStorage.");
+      console.log("No usename found in localStorage.");
     }
   });
 </script>
