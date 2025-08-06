@@ -73,7 +73,6 @@
     .dropdown-box {
       border-radius: 6px;
       width: 100%;
-      max-width: 400px;
       background-color: transparent;
       margin-bottom: 30px;
     }
@@ -114,6 +113,7 @@
       gap: 15px;
       padding: 10px 33px 16px;
       animation: slideDown 0.3s ease forwards;
+      padding-right: 66px !important; 
     }
 
     .dropdown-box.open .dropdown-content {
@@ -344,7 +344,7 @@
       width: 100%;
       max-width: 430px;
     }
-.arrow-icon {
+    .arrow-icon {
       width: 24px;
       height: 24px;
       margin-left: 100px !important;
