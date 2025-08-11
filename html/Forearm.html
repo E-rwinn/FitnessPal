@@ -4,90 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
-		<style>
-			.background {
-				background-color: #f15223;
-			}
-			.Posetion {
-				width: 55%;
-				height: auto;
-				padding-left: 88px;
-				padding-top: 2px;
-			}
-
-			.Box {
-				color: white;
-			}
-
-			.Container {
-				display: flex;
-				gap: 64px;
-				margin-left: 11vw;
-				margin-top: 6vh;
-			}
-			.text {
-				font-family: "Inria Sans", sans-serif;
-				font-weight: 600;
-				color: white;
-				margin-left: 20px;
-				margin-top: 2vh;
-			}
-			.text2 {
-				background-color: rgba(0, 0, 0, 0);
-				height: 180px;
-				width: 382px;
-				margin-top: 15px;
-				margin-left: 4vw;
-			}
-			.text2 {
-				color: white;
-				font-family: "Inria Sans", sans-serif;
-				font-weight: 400;
-				font-size: 20px;
-				text-align: left;
-			}
-			.bottom {
-				background-color: black;
-				width: 124px;
-				height: 21px;
-				text-align: center;
-				margin-left: 139px;
-			}
-			.Button {
-				color: white;
-			}
-		</style>
 	</head>
-	<body class="background">
-		<div class="Container">
-			<a href="./Exircise.html">
-				<img src="../assets/Arrow.png" alt="Arrow" />
-			</a>
-		</div>
-
+	<body class="Background">
+		<a href="./Exircise.html" style="text-decoration: none" ,>
+			<div class="Back"">&lt;</div>
+		</a>
 		<img
-			src="../assets/Screen Shot 2025-07-30 at 11.51.59 AM 1.png"
+			src="	../assets/Screen Shot 2025-07-30 at 11.51.59 AM 1.png"
 			alt="image"
 			class="Posetion"
 		/>
-		<div class="text">INSTRUCTION</div>
-		<div class="text2">
-			<div class="text3">
+		<div class="timer" id="timerBox">Start</div>
+		<div class="Container">
+			<div class="Instruction">INSTRUCTION</div>
+			<div class="Instruction1">
 				Perform the forearm plank position with your elbows under your
 				shoulders, forearms flat on the ground, and lift one leg at a time while
 				keeping your core tight.
 			</div>
-		</div>
-		<div>
-			<div class="text">HOW TO DO IT?</div>
-			<p class="text" style="font-size: 13px; font-weight: 600">
-				HERES A VIDEO FOR VISUAL INTRUSTIONS!
-			</p>
+			<div class="Instruction">HOW TO DO?</div>
+			<div class="Instruction1">HERE’S A VIDEO FOR VISUAL INSTRUCTIONS!</div>
 			<iframe
 				width="315"
 				height="150"
-				style="margin-left: 20px"
-				src="https://www.youtube.com/embed/A2b2EmIg0dA?si=OmzOnN4W3inv2SdG"
+				src="		https://www.youtube.com/embed/A2b2EmIg0dA?si=OmzOnN4W3inv2SdG"
 				title="YouTube video player"
 				frameborder="0"
 				allowfullscreen
@@ -95,3 +35,115 @@
 		</div>
 	</body>
 </html>
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@1,300&family=Poppins:wght@500&display=swap");
+	.Background {
+		background-color: #f15223;
+	}
+	.Back {
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		border: 2px solid;
+		border-color: rgba(75, 75, 75, 0.3);
+		margin-top: 46px;
+		margin-left: 30px;
+		display: flex; /* enables flexbox */
+		justify-content: center; /* horizontal centering */
+		align-items: center;
+		font-family: sans-serif;
+		font-weight: bold;
+        color: black;
+        font-size: 15px;
+	}
+	.Posetion {
+		width: 55%;
+		height: auto;
+		margin-left: 94px;
+		border-radius: 10px;
+	}
+	.timer {
+		width: 97px;
+		height: 37px;
+		background-color: #9a0fe000;
+		color: white;
+		font-family: "Poppins", sans-serif;
+		font-size: 1em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		border-radius: 20px;
+		border: 5px solid;
+		box-shadow: 0 0 5px #ffffff;
+		text-align: center;
+		user-select: none;
+		margin-left: 150px;
+		margin-top: 10px;
+	}
+	.Container {
+		background-color: rgba(255, 255, 255, 0);
+		margin-top: 15px;
+		height: 500px;
+		width: 340px;
+		margin-left: 10vw;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	.Instruction {
+		color: rgb(255, 255, 255);
+		font-family: sans-serif;
+		font-weight: 600;
+		font-size: 18px;
+	}
+	.Instruction1 {
+		color: rgb(255, 255, 255);
+		font-family: sans-serif;
+		font-weight: bold;
+		font-size: 16px;
+	}
+</style>
+<script>
+	let totalTime = 60;
+	let currentTime = totalTime;
+	let isRunning = false;
+	let timerInterval;
+
+	const timerBox = document.getElementById("timerBox");
+
+	timerBox.addEventListener("click", () => {
+		if (isRunning) return;
+
+		isRunning = true;
+		startTimer();
+	});
+
+	function startTimer() {
+		updateDisplay();
+		timerInterval = setInterval(() => {
+			currentTime--;
+			updateDisplay();
+
+			if (currentTime <= 0) {
+				clearInterval(timerInterval);
+				isRunning = false;
+				timerBox.textContent = "Done";
+			}
+		}, 1000);
+	}
+
+	function updateDisplay() {
+		const minutes = Math.floor(currentTime / 60);
+		const seconds = currentTime % 60;
+		timerBox.textContent = `${padZero(minutes)}:${padZero(seconds)}`;
+	}
+
+	function padZero(num) {
+		return num.toString().padStart(2, "0");
+	}
+</script>
+
+
+			
+		
