@@ -1,72 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-		<link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon" />
-		<title>FITNESS PALS</title>
+  <title>FitnessPal</title>
+  <link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon" />
 
-		<link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon" />
-		<title>FITNESS PAL</title>
+  <style>
+    /* ===== Reset & Base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f9f9;
+      color: #1c1c1e;
+      max-width: 430px; /* iPhone 14 Pro Max width */
+      margin: 0 auto;
+    }
 
-		<link rel="stylesheet" href="../css/Workout.css" />
-	</head>
+    /* ===== Header ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .page-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .back-button img {
+      width: 24px;
+      height: 24px;
+    }
 
-	<body class="background">
-		<div class="Container">
-			<a href="./home.html"><img src="../assets/Arrow.png" alt="Arrow" /></a>
+    /* ===== Section Titles ===== */
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 20px 16px 10px;
+    }
 
-			<div class="Font">WorkOuts</div>
-		</div>
+    /* ===== Workout Card ===== */
+    .workout-card {
+      background: white;
+      margin: 10px 16px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+    }
+    .workout-card:hover {
+      transform: translateY(-3px);
+    }
+    .workout-image img {
+      width: 100%;
+      display: block;
+    }
+    .workout-info {
+      padding: 14px 16px;
+    }
+    .workout-info p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #6e6e73;
+    }
+    .day-number {
+      font-weight: 600;
+      color: #1c1c1e;
+      font-size: 1rem;
+    }
+    .btn-start {
+      display: inline-block;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #ff7f50, #ff6347);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
 
-		<div class="Today">Today</div>
-		<div class="workout-container">
-			<div class="Top">
-				<div class="posetion1">
-					<div class="Box2">
-						<div class="Day">Jul 28, wed.</div>
-						<div class="Time">Day 1</div>
-						<div class="Day">5 mins | 76 kcal</div>
-					</div>
-				</div>
-				<div class="Box3">
-					<img src="../assets/image 45.png" alt="image" class="Posetion" />
-				</div>
-			</div>
-			<div class="bottom">
-				<a href="./Exircise.html" class="Button">Start Now</a>
-			</div>
-		</div>
-		<div class="upcoming">upcoming</div>
-		<div class="Box4">
-			<div class="Top1">
-				<div class="Day1">Jul 14, Mon.</div>
-				<div class="Time2">Day 2</div>
-			</div>
-			<div class="Top2">
-				<img src="../assets/image 48.png" alt="image" class="Posetion2" />
-			</div>
-		</div>
-		<div class="upcoming">Week 2</div>
-		<div class="Box4">
-			<div class="Top1">
-				<div class="Day1">Jul 16, Wed.</div>
-				<div class="Time2">Day 3</div>
-			</div>
-			<div class="Top2">
-				<img src="../assets/image 49.png" alt="image" class="Posetion2" />
-			</div>
-		</div>
-		<div class="upcoming">Week 2</div>
-		<div class="Box4">
-			<div class="Top1">
-				<div class="Day1">Jul 18, Fri..</div>
-				<div class="Time2">Day 4</div>
-			</div>
-			<div class="Top2">
-				<img src="../assets/image 50 (1).png" alt="image" class="Posetion2" />
-			</div>
-		</div>
-	</body>
+    /* ===== Bottom Navigation ===== */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+      background: white;
+      position: sticky;
+      bottom: 0;
+      border-top: 1px solid #e5e5ea;
+    }
+    nav a {
+      text-align: center;
+      color: #6e6e73;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    nav img {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin: 0 auto 4px;
+    }
+    nav a.active {
+      color: #ff6347;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="./home.html" class="back-button">
+      <img src="../assets/Arrow.png" alt="Back" />
+    </a>
+    <div class="page-title">Discover Workouts</div>
+    <div></div> <!-- Placeholder for right icon if needed -->
+  </header>
+
+  <!-- Today -->
+  <section>
+    <h2>Today</h2>
+    <div class="workout-card">
+      <div class="workout-image">
+        <img src="../assets/image 45.png" alt="Day 1 Workout" />
+      </div>
+      <div class="workout-info">
+        <p class="date">Jul 28, Wed.</p>
+        <p class="day-number">Day 1 • 5 mins • 76 kcal</p>
+        <a href="./Exircise.html" class="btn-start">Start Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming -->
+  <section>
+    <h2>Upcoming</h2>
+
+    <div class="workout-card">
+      <div class="workout-image">
+        <img src="../assets/image 48.png" alt="Day 2 Workout" />
+      </div>
+      <div class="workout-info">
+        <p class="date">Jul 14, Mon.</p>
+        <p class="day-number">Day 2</p>
+      </div>
+    </div>
+
+    <div class="workout-card">
+      <div class="workout-image">
+        <img src="../assets/image 49.png" alt="Day 3 Workout" />
+      </div>
+      <div class="workout-info">
+        <p class="date">Jul 16, Wed.</p>
+        <p class="day-number">Day 3</p>
+      </div>
+    </div>
+
+    <div class="workout-card">
+      <div class="workout-image">
+        <img src="../assets/image 50 (1).png" alt="Day 4 Workout" />
+      </div>
+      <div class="workout-info">
+        <p class="date">Jul 18, Fri.</p>
+        <p class="day-number">Day 4</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Navigation -->
+  <nav>
+    <a href="./home.html">
+      <img src="/assets/Screen Shot 2025-07-30 at 3.08.44 PM.png" alt="Home" />
+      Home
+    </a>
+    <a href="./discover.html" class="active">
+      <img src="../assets/discover-icon.png" alt="Discover" />
+      Discover
+    </a>
+    <a href="./profile.html">
+      <img src="../assets/profile-icon.png" alt="Profile" />
+      Profile
+    </a>
+  </nav>
+
+</body>
 </html>
