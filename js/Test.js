@@ -1,49 +1,37 @@
-let circleElement, timeElement, totalTime, currentTime, timerInterval;
-const PI = Math.PI;
+let totalTime = 60;
+let currentTime = totalTime;
+let isRunning = false;
+let timerInterval;
 
-window.addEventListener("load", function() {
-    initializeTimer();
+const timerBox = document.getElementById("timerBox");
+
+timerBox.addEventListener("click", () => {
+	if (isRunning) return;
+
+	isRunning = true;
+	startTimer();
 });
 
-function initializeTimer() {
-    circleElement = document.querySelector('.c1');
-    timeElement = document.querySelector('.time');
-    
-    if (!circleElement || !timeElement) {
-        console.error('Required elements not found');
-        return;
-    }
+function startTimer() {
+	updateDisplay();
+	timerInterval = setInterval(() => {
+		currentTime--;
+		updateDisplay();
 
-    totalTime = 20; // Total time in seconds
-    currentTime = totalTime;
-    updateTimerDisplay();
-    timerInterval = setInterval(updateTimer, 1000);
+		if (currentTime <= 0) {
+			clearInterval(timerInterval);
+			isRunning = false;
+			timerBox.textContent = "Done";
+		}
+	}, 1000);
 }
 
-function updateTimer() {
-    if (currentTime <= 0) {
-        clearInterval(timerInterval);
-        return;
-    }
-
-    updateTimerDisplay();
-    updateCircleProgress();
-    currentTime--;
-}
-
-function updateTimerDisplay() {
-    const minutes = Math.floor(currentTime / 60);
-    const seconds = currentTime % 60;
-    timeElement.textContent = `${padZero(minutes)}:${padZero(seconds)}`;
-}
-
-function updateCircleProgress() {
-    const radius = parseInt(circleElement.getAttribute('r'));
-    const circumference = 2 * PI * radius;
-    const progress = Math.ceil(circumference * (1 - currentTime / totalTime));
-    circleElement.style.strokeDashoffset = progress.toString();
+function updateDisplay() {
+	const minutes = Math.floor(currentTime / 60);
+	const seconds = currentTime % 60;
+	timerBox.textContent = `${padZero(minutes)}:${padZero(seconds)}`;
 }
 
 function padZero(num) {
-    return num.toString().padStart(2, '0');
+	return num.toString().padStart(2, "0");
 }

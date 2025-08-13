@@ -1,54 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:900");
 
 body {
-	background-color: #000000;
-}
-
-.svg_timer {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	background-color: #000;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .timer {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: white;
-	border-radius: 50%;
-	padding: 20px;
-}
-
-.c1 {
-	fill: none;
-	stroke-width: 1em;
-	stroke: #9a0fe0;
-	stroke-dasharray: 500;
-	stroke-linecap: round;
-	transform: translate(100%, 0%) rotate(360deg);
-	animation: animate 5s cubic-bezier(0.03, -0.63, 1, 1.73) infinite;
-}
-
-.time {
-	box-sizing: border-box;
-	background-color: transparent;
-	color: #9a0fe0;
-	font-size: 2.5em;
+	width: 200px;
+	height: 100px;
+	background-color: #9a0fe0;
+	color: white;
 	font-family: "Heebo", sans-serif;
-	text-shadow: 0 0 0.2em;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-@keyframes animate {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+	font-size: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 12px;
+	box-shadow: 0 0 20px #9a0fe0;
+	text-align: center;
+	user-select: none;
 }
