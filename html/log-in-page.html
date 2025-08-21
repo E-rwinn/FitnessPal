@@ -13,8 +13,8 @@
     <h2>Login to Your Account</h2>
     <form id="login-form">
       <div class="form-group">
-        <label for="email">Username</label>
-        <input type="text" id="username" required />
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" required />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
@@ -32,6 +32,39 @@
     </p>
   </div>
 
-  <script src="/js/log-in.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginForm = document.getElementById("login-form");
+      const showPassCheckbox = document.getElementById("showPass");
+      const passwordField = document.getElementById("password");
+
+      // Show/hide password
+      if (showPassCheckbox && passwordField) {
+        showPassCheckbox.addEventListener("change", function () {
+          passwordField.type = this.checked ? "text" : "password";
+        });
+      }
+
+      // Handle login form submission
+      if (loginForm) {
+        loginForm.addEventListener("submit", (e) => {
+          e.preventDefault(); // prevent default reload
+
+          const usernameInput = document.getElementById('login-username');
+          const username = usernameInput.value.trim();
+
+          if (username) {
+            // Save username to localStorage
+            localStorage.setItem('username', username);
+
+            // Redirect to home page
+            window.location.href = 'home.html'; // change to your actual home page filename
+          } else {
+            alert("Please enter a username");
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

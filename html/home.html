@@ -1,226 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-      <link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon">
-  <title>FitnessPal</title>
-    <link rel="shortcut icon" href="../assets/Group 18316.png 18316.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/assets/logo-pt2.png" type="image/x-icon">
+  <title>FitnessPal - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: "Sen", sans-serif;
+      background: #FFD3C1;
+      color: #222;
+      max-width: 430px;
+      margin: auto;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #F15225;
+      height: 140px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 28px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .header-right {
+      position: absolute;
+      right: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .settings-btn, .pfp-btn {
+      width: 40px;
+      height: 40px;
+      background: #ffffffaa;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      align-items: center;
+      cursor: pointer;
+      color: #F15225;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .settings-btn:hover, .pfp-btn:hover {
+      background: #ffffffcc;
+    }
+
+    .welcome {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .welcome h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #F15225;
+    }
+
+    .welcome p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 30px 20px 20px 20px;
+    }
+
+  .card {
+  background: #ffffffcc;
+  border-radius: 20px;
+  padding: 28px 20px; /* taller padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 160px; /* increased vertical height */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  color: #F15225;
+}
+
+    .card span {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .btn-discover {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 130px;
+      width: calc(100% - 40px);
+      padding: 18px;
+      background: #F15225;
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-discover:hover {
+      background: #d9431a;
+    }
+
+    a {
+  text-decoration: none;
+  color: inherit;
+}
+
+  </style>
 </head>
-
-<div class="lines">
-<img src="../assets/side.png" class="corner">
-</div>
-
-
-
 <body>
 
+  <header>
+    <h1>FitnessPal</h1>
+    <div class="header-right">
+      <a href="TEST-DROPDOWN.html"><div class="settings-btn">⚙️</div></a>
+    </div>
+  </header>
 
-  <div class="date"></div>
-
+<section class="welcome">
+  <h2>Welcome back, <span id="username">User</span> 👋</h2>
+  <p id="quote">Stay consistent, stay strong!</p>
 <script>
-  const today = new Date();
+  // Get the username from localStorage, default to "User"
+  const username = localStorage.getItem("username") || "User";
 
-  const formatted = today.toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-  });
-
-  document.querySelector('.date').textContent = formatted;
+  // Update the welcome message
+  document.getElementById("username").textContent = username;
 </script>
 
- 
-
-    <div class="timer">
-        <input type="text" id="minutesInput" placeholder="Minutes" />
-        <button id="startBtn">Start Timer</button>
-      </div>
-      
-      <script src="../js/timer.js"></script>
-
-
-<div class="usename">Hi, <span id="welcome-message"></span>!</div>
-
-<div class="username"><span id="welcome-message"></span></div>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const usename = localStorage.getItem("usename");
+  const quotes = [
+    "Stay consistent, stay strong!",
+    "Push yourself, because no one else is going to do it for you.",
+    "Sweat is fat crying.",
+    "Your only limit is you.",
+    "Don’t stop until you’re proud."
+  ];
 
-    if (usename) {
-      const welcomeMessage = document.getElementById("welcome-message");
-      if (welcomeMessage) {
-        welcomeMessage.textContent = usename;
-      }
-    } else {
-      console.log("No usename found in localStorage.");
-    }
-  });
+  const quoteElement = document.getElementById("quote");
+
+  // Pick a random quote each time the page loads
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteElement.textContent = randomQuote;
 </script>
 
-<h1 class="pal">My Plan</h1>
+</section>
 
-<div class="Plans">
-<img src="../assets/Icon.png" id="energy">
 
-<div class="Routine">
-
-    <div class="data">
-<p id="daily">Daily Routine</p>
-<p id="weight">Workout</p>
-<p id="workout">Workout 0 of <span id="totalWorkouts">0</span></p>
+  <section class="stats">
+    <div class="card">
+  <span>🔥</span>
+  <h3>Workouts</h3>
+  <p id="workouts-done-count">0</p>
+</div>
+ <div class="card">
+  <span>⏱️</span>
+  <h3>Weekly Minutes</h3>
+  <p id="weeklyMinutes">0</p>
 </div>
 
-<div class="exercise">
-    <img src="../assets/forward.png" id="forward" onclick="nextWorkout()">
+<script>
+  // Get total minutes from localStorage or default to 0
+  document.getElementById("weeklyMinutes").textContent = localStorage.getItem("minutesDone") || 0;
+</script>
 
-    <div class="under">
-    <p id="next">Next exercise</p>
-    <p id="lower">None</p>
+   <div class="card">
+  <span>🏆</span>
+  <h3>Streak</h3>
+  <p id="streak-count">0</p>
 </div>
-</div>
+<script>
+  // Get streak elements
+  const streakEl = document.getElementById("streak-count");
 
-<div class="newPlan">
-    <button class="add" id="New" onclick="toggleNewPlan()">Create New Plan</button> 
-    <img class="add" src="../assets/add.png">
-    <div class="dropdown hidden" id="addlam"> 
-    
-    </div>
-    
-</div>
-</div>
+  // Get today's date as a string
+  const today = new Date().toDateString();
 
+  // Get last login date from localStorage
+  const lastLogin = localStorage.getItem("lastLoginDate");
 
-<div class="recentPlan">
-  <p id="Recent">Recent Plan</p>
+  // Get current streak
+  let streak = parseInt(localStorage.getItem("streak") || "0");
 
-  <div class="holderR">
-    <div class="plan-images">
-      <img id="holderR" class="recent-img" src="../assets/Item.png" alt="Plan 1">
-      <img id="holderR" class="recent-img" src="../assets/Item.png" alt="Plan 2">
-      <img id="holderR" class="recent-img" src="../assets/Item.png" alt="Plan 3">
-      <img id="holderR" class="recent-img" src="../assets/Item.png" alt="Plan 4">
-    </div>
-    <div class="plan-dates">
-      <p id="holderR" class="recent-date"></p>
-      <p id="holderR" class="recent-date"></p>
-      <p id="holderR" class="recent-date"></p>
-      <p id="holderR" class="recent-date"></p>
-    </div>
-  </div>
-
-  <div class="wasd" id="viewall">
-    <button id="All">See All</button>
-  </div>
-</div>
-
-</div>
-
-<div class="new-plan-ui hidden" id="planUI">
-  <button onclick="toggleNewPlan()" class="close-btn">✕</button>
-  <h2>Create Your Plan</h2>
-
-  <input type="text" id="routineInput" placeholder="Routine Name">
-
-  <div id="workoutContainer"></div>
-
-  <button onclick="addWorkout()" class="add-workout-btn">Add Workout +</button>
-  <button onclick="submitPlan()" class="submit-plan-btn">Submit</button>
-</div>
-
-<script src="../js/newPlan.js"></script>
-
-
-<script src="../js/recent-plan.js"></script>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-
-<footer class="bottom-nav">
-  <a href="TEST-DROPDOWN.html" aria-label="Menu">
-    <i class="fas fa-bars"></i>
-    <span class="nav-label">Settings</span>
-  </a>
-  <a href="home.html" aria-label="Home" class="active">
-    <i class="fas fa-home"></i>
-    <span class="nav-label">Home</span>
-  </a>
-  <a href="workout.html" aria-label="Workout">
-    <i class="fas fa-dumbbell"></i>
-    <span class="nav-label">Workout</span>
-  </a>
-</footer>
-
-<style>
-  .bottom-nav a {
-    color: #555;
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    padding: 10px 0;
-    transition: color 0.3s ease;
+  if (lastLogin !== today) {
+    // If user hasn't logged in today, increment streak
+    streak++;
+    localStorage.setItem("streak", streak);
+    localStorage.setItem("lastLoginDate", today);
   }
 
-  .bottom-nav a:hover,
-  .bottom-nav a:focus {
-    color: #F15223;
-    outline: none;
-  }
-
-  .bottom-nav a.active {
-    color: #F15223;
-  }
-
-  .bottom-nav i {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-
-  .nav-label {
-    font-weight: 600;
-  }
-
-  .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1000;
-    height: 60px;
-  }
+  // Update streak display
+  streakEl.textContent = streak;
+</script>
 
 
-  @media (max-width: 480px) {
-    .nav-label {
-      display: none;
-    }
-    .bottom-nav {
-      height: 50px;
-    }
-    .bottom-nav i {
-      font-size: 22px;
-    }
-  }
-</style>
+  <div class="card">
+  <span>🔥</span>
+  <h3>Calories Burned</h3>
+  <p id="caloriesBurned">0</p>
+</div>
 
+
+  </section>
+
+  <a href="discover.html"><button class="btn-discover">Discover Workouts →</button></a>
 </body>
-
-
-
-
-
 </html>
+<script>
+    
+const button = card.querySelector(".finish-btn");
+button.addEventListener("click", () => {
+  const name = card.querySelector("h3").textContent;
+
+  // 1️⃣ Increment workouts done
+  let workoutsDone = parseInt(localStorage.getItem('workoutsDone') || "0");
+  workoutsDone++;
+  localStorage.setItem('workoutsDone', workoutsDone);
+  document.getElementById("workouts-done-count").textContent = workoutsDone;
+
+  // 2️⃣ Increment weekly minutes
+  let totalMinutes = parseInt(localStorage.getItem("minutesDone") || "0");
+  totalMinutes += workoutData[name]?.time || 10;
+  localStorage.setItem("minutesDone", totalMinutes);
+  document.getElementById("weeklyMinutes").textContent = totalMinutes;
+
+  // 3️⃣ Increment calories burned
+  let totalCalories = parseInt(localStorage.getItem("caloriesBurned") || "0");
+  totalCalories += workoutData[name]?.cal || 50;
+  localStorage.setItem("caloriesBurned", totalCalories);
+  document.getElementById("caloriesBurned").textContent = totalCalories;
+
+  // 4️⃣ Update streak if new day
+  const today = new Date().toDateString();
+  const lastWorkoutDay = localStorage.getItem("lastWorkoutDay");
+  let streak = parseInt(localStorage.getItem("streak") || "0");
+
+  if (lastWorkoutDay !== today) {
+    streak++;
+    localStorage.setItem("streak", streak);
+    localStorage.setItem("lastWorkoutDay", today);
+  }
+
+  document.getElementById("streak-count").textContent = streak;
+
+  // 5️⃣ Update button
+  button.textContent = "Completed ✅";
+  button.disabled = true;
+});
+
+const filterBtn = document.getElementById("filterBtn");
+const dropdown = document.getElementById("dropdown");
+const workoutList = document.getElementById("workoutList");
+const searchInput = document.getElementById("searchInput");
+
+// Toggle difficulty dropdown
+filterBtn.addEventListener("click", () => {
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+  dropdown.style.flexDirection = "column";
+});
+
+// Workouts + images + time + calories
+const uniqueWorkouts = [
+  "Push-Ups","Squats","Burpees","Lunges","Plank","Mountain Climbers","Jumping Jacks","Sit-Ups","High Knees","Bicep Curls",
+  "Tricep Dips","Wall Sit","Side Plank","Flutter Kicks","Crunches","Glute Bridge","Jump Rope","Step-Ups","Russian Twist","Leg Raises",
+  "Donkey Kicks","Superman","Chest Press","Shoulder Press","Arm Circles","Leg Circles","Skater Jumps","Bear Crawl","Tuck Jumps","Star Jumps",
+  "Side Lunges","Curtsy Lunges","Front Kicks","Back Kicks","Heel Touches","Seated Twist","Hip Thrust","Calf Raises","Inchworms","Plank Jacks",
+  "Diamond Push-Ups","Pike Push-Ups","Sumo Squats","Goblet Squats","Climber Push-Ups","Side Plank Reach","V-Ups","Oblique Crunches","Box Jumps","Wall Handstand"
+];
+
+const workoutImages = {
+  "Push-Ups":"https://media.istockphoto.com/id/840909272/photo/athlete-doing-push-ups.jpg?s=612x612&w=0&k=20&c=wv2pq9jOtuzoyFwqWFx56zBfWsO6-9bvkTSofq8q5-o=",
+  "Squats":"https://media.istockphoto.com/id/1332112356/photo/mature-man-squatting-at-home.jpg?s=612x612&w=0&k=20&c=PdUr--78Hi1QpnTMoEk1cyF-I2lZcJomC8YWT0Un_dk=",
+  "Burpees":"https://media.istockphoto.com/id/1475501697/photo/burpee-training-exercise-in-office.jpg?s=612x612&w=0&k=20&c=WQCVXfN9F9GjSRvxZ2MwM2JJROe7gql-eWqRBaOQhQo=",
+  "Lunges":"https://via.placeholder.com/60",
+  "Plank":"https://hips.hearstapps.com/hmg-prod/images/athletic-man-doing-the-plank-for-abs-and-core-royalty-free-image-1708006586.jpg",
+  "Mountain Climbers":"https://via.placeholder.com/60",
+  "Jumping Jacks":"https://media.istockphoto.com/id/1179565077/photo/fitness-woman-doing-jumping-jacks.jpg?s=612x612&w=0&k=20&c=cZCRQwPdwOGT0GJ3cKQCDi7aEw8nWnU0R6ICm2kqN1o=",
+  "Sit-Ups":"https://media.istockphoto.com/id/1151991216/photo/young-athletic-man-doing-sit-ups.jpg?s=612x612&w=0&k=20&c=ltD7R6-5QYmrMoMeJxq6G5dS5r0JAfwPNVf5CSqvJ-Q="
+  // continue adding images for all workouts as needed
+};
+
+const workoutData = {
+  "Push-Ups": { time: 10, cal: 55 },
+  "Squats": { time: 15, cal: 110 },
+  "Burpees": { time: 12, cal: 120 },
+  "Lunges": { time: 12, cal: 90 },
+  "Plank": { time: 5, cal: 25 },
+  "Mountain Climbers": { time: 10, cal: 100 },
+  "Jumping Jacks": { time: 8, cal: 60 },
+  "Sit-Ups": { time: 10, cal: 70 },
+  "High Knees": { time: 10, cal: 95 },
+  "Bicep Curls": { time: 10, cal: 50 },
+  "Tricep Dips": { time: 10, cal: 60 },
+  "Wall Sit": { time: 10, cal: 45 },
+  "Side Plank": { time: 10, cal: 40 },
+  "Flutter Kicks": { time: 10, cal: 50 },
+  "Crunches": { time: 10, cal: 50 },
+  "Glute Bridge": { time: 10, cal: 45 },
+  "Jump Rope": { time: 10, cal: 130 },
+  "Step-Ups": { time: 10, cal: 80 },
+  "Russian Twist": { time: 10, cal: 55 },
+  "Leg Raises": { time: 10, cal: 50 },
+  "Donkey Kicks": { time: 10, cal: 45 },
+  "Superman": { time: 10, cal: 50 },
+  "Chest Press": { time: 10, cal: 60 },
+  "Shoulder Press": { time: 10, cal: 60 },
+  "Arm Circles": { time: 10, cal: 40 },
+  "Leg Circles": { time: 10, cal: 40 },
+  "Skater Jumps": { time: 10, cal: 90 },
+  "Bear Crawl": { time: 10, cal: 80 },
+  "Tuck Jumps": { time: 10, cal: 100 },
+  "Star Jumps": { time: 10, cal: 90 },
+  "Side Lunges": { time: 10, cal: 60 },
+  "Curtsy Lunges": { time: 10, cal: 60 },
+  "Front Kicks": { time: 10, cal: 50 },
+  "Back Kicks": { time: 10, cal: 50 },
+  "Heel Touches": { time: 10, cal: 40 },
+  "Seated Twist": { time: 10, cal: 45 },
+  "Hip Thrust": { time: 10, cal: 50 },
+  "Calf Raises": { time: 10, cal: 40 },
+  "Inchworms": { time: 10, cal: 70 },
+  "Plank Jacks": { time: 10, cal: 80 },
+  "Diamond Push-Ups": { time: 10, cal: 60 },
+  "Pike Push-Ups": { time: 10, cal: 65 },
+  "Sumo Squats": { time: 10, cal: 60 },
+  "Goblet Squats": { time: 10, cal: 70 },
+  "Climber Push-Ups": { time: 10, cal: 80 },
+  "Side Plank Reach": { time: 10, cal: 45 },
+  "V-Ups": { time: 10, cal: 55 },
+  "Oblique Crunches": { time: 10, cal: 50 },
+  "Box Jumps": { time: 10, cal: 90 },
+  "Wall Handstand": { time: 10, cal: 30 }
+};
+
+// Render workouts
+function renderWorkouts(list) {
+  workoutList.innerHTML = "";
+
+  list.forEach(name => {
+    const card = document.createElement("div");
+    card.className = "workout-card";
+    card.innerHTML = `
+      <img src="${workoutImages[name] || 'https://via.placeholder.com/60'}" alt="${name}">
+      <div class="workout-info">
+        <h3>${name}</h3>
+        <p>Time: ${workoutData[name]?.time || 10} min | Calories: ${workoutData[name]?.cal || 50} cal</p>
+        <button class="finish-btn">Finish</button>
+      </div>
+    `;
+
+    workoutList.appendChild(card);
+
+    // Finish button logic
+    const button = card.querySelector(".finish-btn");
+    button.addEventListener("click", () => {
+      // Increment workouts done
+      let workoutsDone = parseInt(localStorage.getItem('workoutsDone') || "0");
+      workoutsDone++;
+      localStorage.setItem('workoutsDone', workoutsDone);
+
+      // Increment weekly minutes
+      let totalMinutes = parseInt(localStorage.getItem("minutesDone") || "0");
+      totalMinutes += workoutData[name]?.time || 10;
+      localStorage.setItem("minutesDone", totalMinutes);
+
+      // Update button
+      button.textContent = "Completed ✅";
+      button.disabled = true;
+
+      // Optional: update weekly minutes in the card immediately
+      const weeklyMinutesCard = document.getElementById("weeklyMinutes");
+      if (weeklyMinutesCard) weeklyMinutesCard.textContent = totalMinutes;
+
+      alert(`${name} completed! Total minutes: ${totalMinutes}`);
+    });
+  });
+}
+
+// Initial render
+renderWorkouts(uniqueWorkouts);
+
+// Difficulty filter
+const difficultyMap = {
+  easy: ["Push-Ups","Squats","Sit-Ups","Jumping Jacks","High Knees","Bicep Curls","Tricep Dips","Wall Sit","Side Plank","Flutter Kicks"],
+  medium: ["Burpees","Lunges","Plank","Mountain Climbers","Glute Bridge","Jump Rope","Step-Ups","Russian Twist","Leg Raises","Donkey Kicks"],
+  hard: ["Superman","Chest Press","Shoulder Press","Arm Circles","Leg Circles","Skater Jumps","Bear Crawl","Tuck Jumps","Star Jumps","Side Lunges"]
+};
+
+dropdown.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const difficulty = btn.getAttribute("data-difficulty");
+    const filtered = difficultyMap[difficulty] || [];
+    renderWorkouts(filtered);
+    dropdown.style.display = "none";
+  });
+});
+
+// Search functionality
+searchInput.addEventListener("input", () => {
+  const filter = searchInput.value.toLowerCase();
+  const cards = workoutList.getElementsByClassName("workout-card");
+  for (let i = 0; i < cards.length; i++) {
+    const title = cards[i].querySelector("h3").textContent.toLowerCase();
+    cards[i].style.display = title.includes(filter) ? "" : "none";
+  }
+});
+
+// Load weekly minutes on page load
+document.getElementById("weeklyMinutes").textContent = localStorage.getItem("minutesDone") || 0;
+</script>
+
+
+
+

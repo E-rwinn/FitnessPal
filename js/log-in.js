@@ -10,18 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Handle login form submit
+  // Handle login form submission
   if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault(); // prevent page reload
 
-      const username = document.getElementById("username").value;
+      const usernameInput = document.getElementById('login-username');
+      const username = usernameInput.value.trim();
 
-      // Save to localStorage
-      localStorage.setItem("username", username);
+      if (username) {
+        // Save the username to localStorage
+        localStorage.setItem('username', username);
 
-      // Redirect to home page
-      window.location.href = "home.html";
+        // Redirect to home page
+        window.location.href = 'home.html';
+      } else {
+        alert("Please enter a username");
+      }
     });
   }
 });

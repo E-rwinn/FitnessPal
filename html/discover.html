@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FitnessPal - Discover</title>
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: "Sen", sans-serif;
+    max-width: 430px;
+    margin: auto;
+    padding: 0;
+    background: #FFD3C1;
+  }
+
+  header {
+    background: #F15223;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  header h1 { font-size: 28px; font-weight: 800; }
+
+  .header-left {
+    position: absolute;
+    left: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .header-left img {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  .search-container {
+    margin: 0 20px 15px 20px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    outline: none;
+  }
+
+  .filter-container {
+    margin: 0 20px 20px 20px;
+  }
+  .filter-btn {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .filter-btn:hover { background: #f0f0f0; }
+
+  .workout-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 20px 30px 20px;
+  }
+
+  .workout-card {
+    background: #ffffffcc;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .workout-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+  .workout-info { display: flex; flex-direction: column; }
+  .workout-info h3 {
+    font-size: 18px;
+    color: #F15223;
+    font-weight: 700;
+    margin: 0;
+  }
+  .workout-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0 0 0;
+  }
+  .finish-btn {
+    padding: 10px;
+    background-color: #F15223;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 5px;
+    align-self: flex-start;
+  }
+  .finish-btn:hover { background-color: #d9431a; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="/html/home.html"><img src="/assets/Arrow.png" alt="Back"></a>
+  </div>
+  <h1>Discover</h1>
+</header>
+
+<div class="search-container">
+  <input type="text" class="search-input" placeholder="Search workouts...">
+</div>
+
+<div class="filter-container">
+  <button class="filter-btn">Filter Difficulty ▼</button>
+</div>
+
+<section class="workout-list">
+  <!-- Workout cards will go here later -->
+  <div class="workout-card">
+    <img src="https://via.placeholder.com/60" alt="Push-Ups">
+    <div class="workout-info">
+      <h3>Push-Ups</h3>
+      <p>Time: 10 min | Calories: 55 cal</p>
+      <button class="finish-btn">Finish</button>
+    </div>
+  </div>
+
+  <div class="workout-card">
+    <img src="https://via.placeholder.com/60" alt="Squats">
+    <div class="workout-info">
+      <h3>Squats</h3>
+      <p>Time: 15 min | Calories: 110 cal</p>
+      <button class="finish-btn">Finish</button>
+    </div>
+  </div>
+</section>
+<script>
+  finishButton.addEventListener("click", () => {
+  const name = card.querySelector("h3").textContent;
+
+  // Workouts done
+  let workoutsDone = parseInt(localStorage.getItem("workoutsDone") || "0");
+  workoutsDone++;
+  localStorage.setItem("workoutsDone", workoutsDone);
+
+  // Weekly minutes
+  let totalMinutes = parseInt(localStorage.getItem("minutesDone") || "0");
+  totalMinutes += workoutData[name]?.time || 10;
+  localStorage.setItem("minutesDone", totalMinutes);
+
+  // Calories burned
+  let totalCalories = parseInt(localStorage.getItem("caloriesBurned") || "0");
+  totalCalories += workoutData[name]?.cal || 50;
+  localStorage.setItem("caloriesBurned", totalCalories);
+
+  // Streak
+  const today = new Date().toDateString();
+  const lastWorkoutDay = localStorage.getItem("lastWorkoutDay");
+  let streak = parseInt(localStorage.getItem("streak") || "0");
+  if (lastWorkoutDay !== today) {
+    streak++;
+    localStorage.setItem("streak", streak);
+    localStorage.setItem("lastWorkoutDay", today);
+  }
+
+  // Update button
+  finishButton.textContent = "Completed ✅";
+  finishButton.disabled = true;
+});
+
+</script>
+</body>
+</html>
