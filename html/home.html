@@ -250,6 +250,14 @@
 </body>
 </html>
 <script>
+document.getElementById("workouts-done-count").textContent = localStorage.getItem("workoutsDone") || 0;
+document.getElementById("weeklyMinutes").textContent = localStorage.getItem("minutesDone") || 0;
+document.getElementById("caloriesBurned").textContent = localStorage.getItem("caloriesBurned") || 0;
+document.getElementById("streak-count").textContent = localStorage.getItem("streak") || 0;
+</script>
+
+<script>
+    
     
 const button = card.querySelector(".finish-btn");
 button.addEventListener("click", () => {

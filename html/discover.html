@@ -6,117 +6,29 @@
 <title>FitnessPal - Discover</title>
 <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: "Sen", sans-serif;
-    max-width: 430px;
-    margin: auto;
-    padding: 0;
-    background: #FFD3C1;
-  }
-
-  header {
-    background: #F15223;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    color: white;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
+  body { font-family: "Sen", sans-serif; max-width: 430px; margin: auto; padding: 0; background: #FFD3C1; }
+  header { background: #F15223; height: 120px; display: flex; justify-content: center; align-items: center; position: relative; color: white; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
   header h1 { font-size: 28px; font-weight: 800; }
+  .header-left { position: absolute; left: 15px; display: flex; align-items: center; }
+  .header-left img { width: 28px; height: 28px; cursor: pointer; }
 
-  .header-left {
-    position: absolute;
-    left: 15px;
-    display: flex;
-    align-items: center;
-  }
-  .header-left img {
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-  }
+  .search-container { margin: 0 20px 15px 20px; }
+  .search-input { width: 100%; padding: 12px 20px; border-radius: 15px; border: none; font-size: 16px; font-weight: 600; box-shadow: 0 4px 8px rgba(0,0,0,0.1); outline: none; }
 
-  .search-container {
-    margin: 0 20px 15px 20px;
-  }
-  .search-input {
-    width: 100%;
-    padding: 12px 20px;
-    border-radius: 15px;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    outline: none;
-  }
-
-  .filter-container {
-    margin: 0 20px 20px 20px;
-  }
-  .filter-btn {
-    width: 100%;
-    padding: 15px 20px;
-    border-radius: 15px;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+  .filter-container { margin: 0 20px 20px 20px; position: relative; }
+  .filter-btn { width: 100%; padding: 15px 20px; border-radius: 15px; border: none; font-weight: 700; cursor: pointer; background: #fff; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
   .filter-btn:hover { background: #f0f0f0; }
+  .dropdown-content { display: none; position: absolute; top: 60px; width: 100%; background: #fff; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-direction: column; z-index: 10; }
+  .dropdown-content button { padding: 15px 20px; border: none; background: none; text-align: left; cursor: pointer; font-weight: 600; transition: 0.2s; }
+  .dropdown-content button:hover { background: #f0f0f0; }
 
-  .workout-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 0 20px 30px 20px;
-  }
-
-  .workout-card {
-    background: #ffffffcc;
-    border-radius: 20px;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  .workout-card img {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    object-fit: cover;
-  }
+  .workout-list { display: flex; flex-direction: column; gap: 15px; margin: 0 20px 30px 20px; }
+  .workout-card { background: #ffffffcc; border-radius: 20px; padding: 15px; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  .workout-card img { width: 60px; height: 60px; border-radius: 15px; object-fit: cover; }
   .workout-info { display: flex; flex-direction: column; }
-  .workout-info h3 {
-    font-size: 18px;
-    color: #F15223;
-    font-weight: 700;
-    margin: 0;
-  }
-  .workout-info p {
-    font-size: 14px;
-    color: #555;
-    margin: 2px 0 0 0;
-  }
-  .finish-btn {
-    padding: 10px;
-    background-color: #F15223;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    margin-top: 5px;
-    align-self: flex-start;
-  }
+  .workout-info h3 { font-size: 18px; color: #F15223; font-weight: 700; margin: 0; }
+  .workout-info p { font-size: 14px; color: #555; margin: 2px 0 0 0; }
+  .finish-btn { padding: 10px; background-color: #F15223; color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 14px; margin-top: 5px; align-self: flex-start; }
   .finish-btn:hover { background-color: #d9431a; }
 </style>
 </head>
@@ -135,62 +47,91 @@
 
 <div class="filter-container">
   <button class="filter-btn">Filter Difficulty ▼</button>
+  <div class="dropdown-content">
+    <button data-difficulty="easy">Easy</button>
+    <button data-difficulty="medium">Medium</button>
+    <button data-difficulty="hard">Hard</button>
+  </div>
 </div>
 
-<section class="workout-list">
-  <!-- Workout cards will go here later -->
-  <div class="workout-card">
-    <img src="https://via.placeholder.com/60" alt="Push-Ups">
-    <div class="workout-info">
-      <h3>Push-Ups</h3>
-      <p>Time: 10 min | Calories: 55 cal</p>
-      <button class="finish-btn">Finish</button>
-    </div>
-  </div>
+<section class="workout-list"></section>
 
-  <div class="workout-card">
-    <img src="https://via.placeholder.com/60" alt="Squats">
-    <div class="workout-info">
-      <h3>Squats</h3>
-      <p>Time: 15 min | Calories: 110 cal</p>
-      <button class="finish-btn">Finish</button>
-    </div>
-  </div>
-</section>
 <script>
-  finishButton.addEventListener("click", () => {
-  const name = card.querySelector("h3").textContent;
+const workoutList = document.querySelector(".workout-list");
+const searchInput = document.querySelector(".search-input");
+const filterBtn = document.querySelector(".filter-btn");
+const dropdown = document.querySelector(".dropdown-content");
 
-  // Workouts done
-  let workoutsDone = parseInt(localStorage.getItem("workoutsDone") || "0");
-  workoutsDone++;
-  localStorage.setItem("workoutsDone", workoutsDone);
+const workouts = [
+  { name: "Push-Ups", time: 10, cal: 55, difficulty: "easy", img: "https://blog.nasm.org/hubfs/power-pushups.jpg" },
+  { name: "Squats", time: 15, cal: 110, difficulty: "easy", img: "https://www.themanual.com/wp-content/uploads/sites/9/2024/11/pexels-mart-production-man-squatting-down-doing-jump-squats-at-home-workout-e1737666900934.jpg?resize=1200%2C720&p=1" },
+  { name: "Burpees", time: 12, cal: 120, difficulty: "medium", img: "https://images.squarespace-cdn.com/content/v1/640626ced6468757ca7fc2f7/1719792911953-QMRFLS1PJZXU336F6S1N/what-to-do-if-you-hate-burpees.jpg" },
+  { name: "Plank", time: 5, cal: 25, difficulty: "easy", img: "https://hips.hearstapps.com/hmg-prod/images/athletic-man-doing-the-plank-for-abs-and-core-royalty-free-image-1708006586.jpg" }
+];
 
-  // Weekly minutes
-  let totalMinutes = parseInt(localStorage.getItem("minutesDone") || "0");
-  totalMinutes += workoutData[name]?.time || 10;
-  localStorage.setItem("minutesDone", totalMinutes);
+// Render workouts
+function renderList(list) {
+  workoutList.innerHTML = "";
+  list.forEach(w => {
+    const card = document.createElement("div");
+    card.className = "workout-card";
+    card.innerHTML = `
+      <img src="${w.img}" alt="${w.name}">
+      <div class="workout-info">
+        <h3>${w.name}</h3>
+        <p>Time: ${w.time} min | Calories: ${w.cal} cal</p>
+        <button class="finish-btn">Finish</button>
+      </div>
+    `;
+    workoutList.appendChild(card);
 
-  // Calories burned
-  let totalCalories = parseInt(localStorage.getItem("caloriesBurned") || "0");
-  totalCalories += workoutData[name]?.cal || 50;
-  localStorage.setItem("caloriesBurned", totalCalories);
+    card.querySelector(".finish-btn").addEventListener("click", () => {
+      let workoutsDone = parseInt(localStorage.getItem("workoutsDone")||"0")+1;
+      localStorage.setItem("workoutsDone", workoutsDone);
 
-  // Streak
-  const today = new Date().toDateString();
-  const lastWorkoutDay = localStorage.getItem("lastWorkoutDay");
-  let streak = parseInt(localStorage.getItem("streak") || "0");
-  if (lastWorkoutDay !== today) {
-    streak++;
-    localStorage.setItem("streak", streak);
-    localStorage.setItem("lastWorkoutDay", today);
-  }
+      let totalMinutes = parseInt(localStorage.getItem("minutesDone")||"0")+w.time;
+      localStorage.setItem("minutesDone", totalMinutes);
 
-  // Update button
-  finishButton.textContent = "Completed ✅";
-  finishButton.disabled = true;
+      let totalCalories = parseInt(localStorage.getItem("caloriesBurned")||"0")+w.cal;
+      localStorage.setItem("caloriesBurned", totalCalories);
+
+      // Streak
+      const today = new Date().toDateString();
+      const lastDay = localStorage.getItem("lastWorkoutDay");
+      let streak = parseInt(localStorage.getItem("streak")||"0");
+      if(lastDay!==today){ streak++; localStorage.setItem("streak", streak); localStorage.setItem("lastWorkoutDay", today); }
+
+      card.querySelector(".finish-btn").textContent = "Completed ✅";
+      card.querySelector(".finish-btn").disabled = true;
+    });
+  });
+}
+
+renderList(workouts);
+
+// Search filter
+searchInput.addEventListener("input", () => {
+  const filter = searchInput.value.toLowerCase();
+  const filtered = workouts.filter(w => w.name.toLowerCase().includes(filter));
+  renderList(filtered);
 });
 
+// Dropdown toggle
+filterBtn.addEventListener("click", () => {
+  dropdown.style.display = dropdown.style.display==="flex"?"none":"flex";
+  dropdown.style.flexDirection = "column";
+});
+
+// Difficulty filter
+dropdown.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const diff = btn.getAttribute("data-difficulty");
+    const filtered = worakouts.filter(w => w.difficulty === diff);
+    renderList(filtered);
+    dropdown.style.display = "none";
+  });
+});
 </script>
+
 </body>
 </html>
